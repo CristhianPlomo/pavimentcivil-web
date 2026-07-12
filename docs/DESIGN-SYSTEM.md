@@ -8,9 +8,128 @@ Fuente única de verdad: bloque `:root` de `styles.css`.
 
 Fases:
 
-1. **Color** — cerrado y aprobado por QA (este documento).
-2. Tipografía + Espaciado — pendiente (siguiente fase).
-3. Componentes / layouts — no iniciar hasta cerrar 1 y 2.
+1. **Color** — cerrado y aprobado por QA.
+2. **Tipografía + Espaciado + Layout + Motion** — Entrega 2.1 (este documento).
+3. **Componentes `.ds-*` y cableado** — pendiente (Entrega 2.2+).
+4. **Páginas y layouts** — no iniciar hasta cerrar 2 y 3.
+
+---
+
+## 2. Sistema tipográfico (Entrega 2.1)
+
+Fuente: **Barlow** (cuerpo, UI, formularios) + **Barlow Condensed** (display, títulos).
+
+Base: `--font-size-root: 16px` en `html`.
+
+### 2.1 Primitivos
+
+| Token | Valor |
+|---|---|
+| `--font-family-body` | `'Barlow', sans-serif` |
+| `--font-family-display` | `'Barlow Condensed', sans-serif` |
+| `--font-weight-light` | `300` |
+| `--font-weight-regular` | `400` |
+| `--font-weight-medium` | `500` |
+| `--font-weight-semibold` | `600` |
+| `--font-weight-bold` | `700` |
+| `--font-weight-black` | `900` |
+
+### 2.2 Jerarquía semántica
+
+Cada nivel expone **4 propiedades** (`-size`, `-line-height`, `-weight`, `-letter-spacing`) + `-family` cuando aplica.
+
+| Nivel | Uso principal | Size (móvil) | Line-height | Weight | Letter-spacing |
+|---|---|---|---|---|---|
+| **Display XL** | Hero H1 | `clamp(52px,14vw,80px)` → md `60–96px` → lg `80–110px` | `0.92` | `900` | `-0.01em` |
+| **Display L** | CTA invertido | `clamp(38px,10vw,52px)` | `1` | `700` | `0` |
+| **H1** | Títulos sección | `clamp(34px,9vw,48px)` → md `40–56px` | `1` | `700` | `0` |
+| **H2** | Modales, legal | `clamp(26px,6vw,36px)` | `1.05` | `700` | `0` |
+| **H3** | Tarjetas 20px | `20px` | `1.2` | `700` | `0.03em` |
+| **H4** | Subtítulos 17–18px | `17px` / sm `14px` / lg `18px` | `1.2` | `700` | `0.03em` |
+| **H5** | Subtítulos menores | `15px` | `1.3` | `700` | `0.02em` |
+| **H6** | Footer columnas | `12px` | `1.3` | `700` | `0.1em` |
+| **Lead** | Hero subtítulo | `15px` → md `18px` | `1.65` | `300` | `0` |
+| **Body Large** | Párrafos desktop | `17px` | `1.65` | `400` | `0` |
+| **Body** | Texto estándar | `15px` → md `16px` | `1.65` | `400` | `0` |
+| **Body Small** | Descripciones | `13px` | `1.6` | `400` | `0` |
+| **Caption** | Footer, errores | `12px` / sm `11px` | `1.3` | `400` | `0` |
+| **Label** | Contacto, campos | `10px` | `1.3` | `700` | `0.08em` |
+| **Button** | CTAs | `14px` / sm `12px` / md `13px` | `1.2` | `700` | `0.07em` |
+| **Overline** | Eyebrows, tags | `10px` → md `11px` | `1.3` | `700` | `0.12–0.14em` |
+
+Tokens en CSS: `--type-{nivel}-{propiedad}` (ej. `--type-h1-size`, `--type-body-line-height`).
+
+---
+
+## 3. Sistema de espaciado (Entrega 2.1)
+
+Escala **4 px** con mapeo 1:1 de todos los valores en uso:
+
+`2, 4, 5, 6, 7, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 36, 40, 48, 52, 56, 60, 62, 64, 72, 80, 88, 96, 100`
+
+Convención: `--space-{px}` (ej. `--space-20: 20px`).
+
+---
+
+## 4. Layout, radius y motion (Entrega 2.1)
+
+### Layout
+
+| Token | Valor | Uso |
+|---|---|---|
+| `--layout-nav-height` | `56px` | Nav móvil |
+| `--layout-nav-height-md` | `62px` | Nav desktop |
+| `--layout-scroll-padding` | `70px` | Anclas sticky |
+| `--layout-container-gutter` | `20px` | Padding horizontal móvil |
+| `--layout-section-py` | `64px` | Secciones móvil |
+| `--layout-section-py-md` | `88px` | Secciones tablet+ |
+| `--layout-section-py-lg` | `100px` | Secciones XL |
+| `--layout-max-legal` | `820px` | Páginas legales |
+| `--layout-max-modal` | `860px` | Modal pavimentos |
+| `--layout-max-cta` | `1100px` | Bloque contacto |
+
+### Radius
+
+`--radius-1` (1px) · `--radius-3` · `--radius-4` · `--radius-5` · `--radius-6` · `--radius-8` · `--radius-10` · `--radius-full`
+
+### Motion
+
+| Token | Valor |
+|---|---|
+| `--duration-instant` | `0.15s` |
+| `--duration-fast` | `0.2s` |
+| `--duration-normal` | `0.25s` |
+| `--duration-medium` | `0.3s` |
+| `--duration-slow` | `0.45s` |
+| `--duration-enter` | `0.65s` |
+| `--focus-ring-width` | `2px` |
+| `--focus-ring-offset` | `2px` |
+| `--opacity-disabled` | `0.55` |
+
+---
+
+## 5. Componentes preparados (Entrega 2.1)
+
+Tokens semánticos listos para Entrega 2.2. **No hay clases `.ds-*` ni HTML nuevo.**
+
+| Grupo | Prefijo token | Estado |
+|---|---|---|
+| Botones | `--component-btn-*` | Preparado |
+| Inputs | `--component-input-*` | Preparado + focus `:focus-visible` |
+| Formularios | `--component-form-*`, `--component-field-*` | Preparado |
+| Cards | `--component-card-*` | Preparado |
+| Tags | `--component-tag-*` | Preparado |
+| Estados | `--state-*`, `--color-focus/hover/active/disabled` | Preparado |
+
+**No creado en esta entrega** (aparecerán cuando la V1.0 los necesite): breadcrumbs, tablas, alertas complejas, grid/container genérico, sprite SVG, iconografía.
+
+---
+
+## 6. Compatibilidad
+
+- Alias de color Fase 1 intactos (`--gold`, `--dark`, `--light`, etc.).
+- Clases HTML existentes sin cambios (`.btn-primary`, `.f-input`, `.pav-card`, etc.).
+- Selectores legacy cableados internamente a tokens; aspecto visual preservado.
 
 ---
 
