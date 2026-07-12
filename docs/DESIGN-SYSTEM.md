@@ -9,9 +9,106 @@ Fuente única de verdad: bloque `:root` de `styles.css`.
 Fases:
 
 1. **Color** — cerrado y aprobado por QA.
-2. **Tipografía + Espaciado + Layout + Motion** — Entrega 2.1 (este documento).
-3. **Componentes `.ds-*` y cableado** — pendiente (Entrega 2.2+).
-4. **Páginas y layouts** — no iniciar hasta cerrar 2 y 3.
+2. **Tipografía + Espaciado + Layout + Motion** — Entrega 2.1 (cerrada).
+3. **Componentes `.ds-*` y cableado legacy** — Entrega 2.2 (este documento).
+4. **Páginas y layouts** — no iniciar hasta cerrar 3.
+
+---
+
+## 7. Componentes UI (Entrega 2.2)
+
+Capa canónica en `styles.css` (bloque **DESIGN SYSTEM — Componentes**). Las clases
+legacy siguen activas en el HTML vía selectores agrupados; aspecto visual preservado.
+
+### 7.1 Botones
+
+| Clase DS | Variante / tamaño | Alias legacy |
+|---|---|---|
+| `.ds-btn` | Base (tipografía, cursor, focus-visible, disabled) | — |
+| `.ds-btn--primary` | Fondo acento | `.btn-primary`, `.btn-form`, `.btn-gold-sm`, `.nav-cta` |
+| `.ds-btn--secondary` | Borde ghost | `.btn-secondary` |
+| `.ds-btn--whatsapp` | CTA WhatsApp | `.wa-btn` |
+| `.ds-btn--sm` | Compacto | `.btn-gold-sm`, `.nav-cta` |
+| `.ds-btn--lg` | Desktop hero (768px+) | `.btn-primary`, `.btn-secondary` (media query) |
+| `.ds-btn--block` | Ancho completo | `.btn-form`, `.wa-btn` |
+
+Estados: `:hover`, `:active` (primario en `.btn-primary` / `.btn-form`), `:focus-visible`, `:disabled`.
+
+### 7.2 Formularios
+
+| Clase DS | Rol | Alias legacy |
+|---|---|---|
+| `.ds-form` | Contenedor column | `.form` |
+| `.ds-field` | Wrapper campo | `.f-field` |
+| `.ds-label` | Etiqueta (preparado V1.0) | — |
+| `.ds-input` | Input | `.f-input` |
+| `.ds-textarea` | Textarea | `textarea.f-input` |
+| `.ds-field-error` | Error campo | `.f-error` |
+| `.ds-form-status` | Mensaje global | `.form-status` |
+| `.ds-form-status--sending` | Enviando | `.form-status.sending` |
+| `.ds-form-status--success` | Éxito | `.form-status.success` |
+| `.ds-form-status--error` | Error | `.form-status.error` |
+
+Estados input: `:focus`, `:focus-visible`, `.invalid` / `.is-invalid`.
+
+### 7.3 Tags / Eyebrows
+
+| Clase DS | Rol | Alias legacy |
+|---|---|---|
+| `.ds-tag` | Chip | `.tag` |
+| `.ds-eyebrow` | Tipografía overline base | `.sec-tag`, `.cta-tag` |
+| `.ds-eyebrow--accent` | Caja dorada | `.hero-tag` |
+| `.ds-eyebrow--section` | Sección oscura | `.sec-tag` |
+| `.ds-eyebrow--inverse` | Sobre fondo amarillo | `.cta-tag` |
+
+### 7.4 Cards
+
+| Clase DS | Rol | Alias legacy |
+|---|---|---|
+| `.ds-card` | Superficie base | `.pav-card`, `.proj-card` |
+| `.ds-card--elevated` | Superficie negra elevada | `.contact-card` |
+| `.ds-card--interactive` | Hover borde/fondo | `.sector-card` |
+| `.ds-card--accent` | Fondo acento tenue | `.pav-cta-card` |
+
+Estructura específica (`.pav-card::before`, grid `.proj-card`) permanece en legacy.
+
+### 7.5 Tokens adicionales (Entrega 2.2)
+
+| Token | Uso |
+|---|---|
+| `--component-btn-border-secondary` | Borde `.btn-secondary` |
+| `--component-btn-letter-spacing-nav` | `.nav-cta` |
+| `--component-wa-bg/border/bg-hover` | Botón WhatsApp |
+| `--component-eyebrow-accent-bg/border` | `.hero-tag` |
+| `--component-eyebrow-inverse-color` | `.cta-tag` |
+| `--component-card-accent-bg/border` | `.pav-cta-card` |
+| `--component-form-status-color-*` | Estados formulario |
+
+---
+
+## 5. Componentes preparados (Entrega 2.1 → cableados en 2.2)
+
+Ver **§7 Componentes UI** para clases `.ds-*` y mapa legacy.
+
+| Grupo | Prefijo token | Estado |
+|---|---|---|
+| Botones | `--component-btn-*` | Cableado (2.2) |
+| Inputs | `--component-input-*` | Cableado (2.2) |
+| Formularios | `--component-form-*`, `--component-field-*` | Cableado (2.2) |
+| Cards | `--component-card-*` | Cableado (2.2) |
+| Tags | `--component-tag-*` | Cableado (2.2) |
+| Estados | `--state-*`, `--color-focus/hover/active/disabled` | Cableado (2.2) |
+
+**No creado** (aparecerán cuando la V1.0 los necesite): breadcrumbs, tablas, alertas complejas, grid/container genérico, sprite SVG, iconografía.
+
+---
+
+## 6. Compatibilidad
+
+- Alias de color Fase 1 intactos (`--gold`, `--dark`, `--light`, etc.).
+- Clases HTML existentes sin cambios (`.btn-primary`, `.f-input`, `.pav-card`, etc.).
+- Selectores legacy agrupados con `.ds-*`; aspecto visual preservado.
+- Las clases `.ds-*` están disponibles para páginas futuras; la Home no las usa aún.
 
 ---
 
