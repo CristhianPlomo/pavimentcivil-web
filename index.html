@@ -40,10 +40,10 @@
 
 <!-- ============================================================
      FAVICON / PWA
-     TODO: generar favicon.ico y assets/apple-touch-icon.png (180x180)
+     TODO: generar favicon.ico (opcional; favicon.svg y apple-touch-icon ya disponibles)
      ============================================================ -->
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="assets/favicon-64.png" type="image/png" sizes="64x64">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
 
@@ -104,8 +104,7 @@
      ============================================================ -->
 <nav class="nav" id="mainNav">
   <a class="nav-logo" href="#home" aria-label="PavimentCivil, inicio">
-    <!-- TODO: añadir assets/logo.png (PNG transparente, mínimo 80x80px) -->
-    <img src="assets/logo.png" alt="PavimentCivil logotipo" width="38" height="38">
+    <img src="assets/LogoIcono.png" alt="" width="57" height="38" aria-hidden="true">
     <span class="nav-brand">PAVIMENTCIVIL</span>
   </a>
   <ul class="nav-links" aria-label="Navegación principal">
@@ -133,7 +132,7 @@
      HERO
      ============================================================ -->
 <section class="hero" id="home" aria-label="Inicio">
-  <img class="hero-img" src="assets/hero-cover.webp" alt="Equipo de PAVIMENTCIVIL instalando pavimento de adoquines en una obra" fetchpriority="high" decoding="async" width="1920" height="1440">
+  <img class="hero-img" src="assets/hero-cover.webp" alt="Calle adoquinada en casco histórico mediterráneo, pavimento de adoquines en perfecto estado" fetchpriority="high" decoding="async" width="1920" height="1280">
   <div class="hero-overlay" aria-hidden="true"></div>
   <div class="hero-bg-grid" aria-hidden="true"></div>
   <div class="hero-glow" aria-hidden="true"></div>
@@ -512,8 +511,7 @@
   <div class="footer-inner">
     <div class="footer-about">
       <div class="footer-brand">
-        <img src="assets/logo.png" alt="PavimentCivil logotipo" width="34" height="34">
-        <span class="footer-brand-name">PAVIMENTCIVIL</span>
+        <img src="assets/logo.png" alt="PavimentCivil" width="432" height="540">
       </div>
       <p class="footer-desc">Especialistas en pavimentos industriales de alto rendimiento en España. Más de 15 años construyendo suelos que duran.</p>
     </div>
