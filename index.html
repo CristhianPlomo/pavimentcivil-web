@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ============================================================
+     SEO PRIMARIO
+     TODO: sustituir el dominio https://www.pavimentcivil.es por el definitivo
+     ============================================================ -->
+<title>Pavimentos Industriales en España | Epoxi, Hormigón y Resina | PavimentCivil</title>
+<meta name="description" content="Especialistas en pavimentos industriales de alto rendimiento en España: hormigón, epoxi, poliuretano, cemento pulido y resina MMA. +15 años de experiencia. Solicita presupuesto sin compromiso.">
+<meta name="keywords" content="pavimentos industriales, suelos industriales, pavimento epoxi, hormigón industrial, cemento pulido, resina MMA, adoquines, pavimentos industriales España">
+<meta name="author" content="PavimentCivil">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0A0A0A">
+<link rel="canonical" href="https://www.pavimentcivil.es/">
+
+<!-- ============================================================
+     OPEN GRAPH / FACEBOOK
+     TODO: crear assets/og-image.jpg (1200x630px) con la marca
+     ============================================================ -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.pavimentcivil.es/">
+<meta property="og:title" content="Pavimentos Industriales de Alto Rendimiento | PavimentCivil">
+<meta property="og:description" content="Soluciones duraderas, seguras y adaptadas a cada proyecto industrial. +500 proyectos, +15 años de experiencia en España.">
+<meta property="og:image" content="https://www.pavimentcivil.es/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="PavimentCivil">
+
+<!-- ============================================================
+     TWITTER CARD
+     ============================================================ -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pavimentos Industriales de Alto Rendimiento | PavimentCivil">
+<meta name="twitter:description" content="Soluciones duraderas, seguras y adaptadas a cada proyecto industrial en España.">
+<meta name="twitter:image" content="https://www.pavimentcivil.es/assets/og-image.jpg">
+
+<!-- ============================================================
+     FAVICON / PWA
+     TODO: generar favicon.ico y assets/apple-touch-icon.png (180x180)
+     ============================================================ -->
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+
+<!-- ============================================================
+     FUENTES
+     ============================================================ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;600;700;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- Estilos -->
+<link rel="stylesheet" href="styles.css">
+
+<!-- ============================================================
+     DATOS ESTRUCTURADOS (Schema.org)
+     TODO: completar teléfono, email, dirección y redes sociales reales
+     ============================================================ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "PavimentCivil",
+  "image": "https://www.pavimentcivil.es/assets/og-image.jpg",
+  "@id": "https://www.pavimentcivil.es/",
+  "url": "https://www.pavimentcivil.es/",
+  "telephone": "+34900000000",
+  "email": "info@pavimentcivil.es",
+  "priceRange": "€€",
+  "description": "Especialistas en pavimentos industriales de alto rendimiento en España: hormigón, epoxi, poliuretano, cemento pulido y resina MMA.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "ES",
+    "addressLocality": "TODO: ciudad",
+    "postalCode": "TODO: código postal",
+    "streetAddress": "TODO: dirección"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "España"
+  },
+  "knowsAbout": [
+    "Pavimentos industriales",
+    "Pavimento epoxi",
+    "Hormigón industrial",
+    "Cemento pulido",
+    "Resina MMA",
+    "Pavimentos de poliuretano",
+    "Adoquines"
+  ],
+  "sameAs": []
+}
+</script>
+</head>
+<body>
+
+<!-- ============================================================
+     NAVIGATION
+     ============================================================ -->
+<nav class="nav" id="mainNav">
+  <a class="nav-logo" href="#home" aria-label="PavimentCivil, inicio">
+    <!-- TODO: añadir assets/logo.png (PNG transparente, mínimo 80x80px) -->
+    <img src="assets/logo.png" alt="PavimentCivil logotipo" width="38" height="38">
+    <span class="nav-brand">PAVIMENTCIVIL</span>
+  </a>
+  <ul class="nav-links" aria-label="Navegación principal">
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="#pavimentos">Pavimentos</a></li>
+    <li><a href="#sectores">Sectores</a></li>
+    <li><a href="#proyectos">Proyectos</a></li>
+    <li><a href="#proceso">Proceso</a></li>
+  </ul>
+  <a href="#contacto" class="nav-cta" aria-label="Solicitar presupuesto">Presupuesto</a>
+  <button class="nav-menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<nav class="mobile-menu" id="mobileMenu" aria-label="Menú móvil">
+  <a href="#nosotros">Nosotros</a>
+  <a href="#pavimentos">Pavimentos</a>
+  <a href="#sectores">Sectores</a>
+  <a href="#proyectos">Proyectos</a>
+  <a href="#proceso">Proceso</a>
+  <a href="#contacto">Contactar</a>
+</nav>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="hero" id="home" aria-label="Inicio">
+  <img class="hero-img" src="assets/hero-cover.webp" alt="Equipo de PAVIMENTCIVIL instalando pavimento de adoquines en una obra" fetchpriority="high" decoding="async" width="1920" height="1440">
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="hero-bg-grid" aria-hidden="true"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-tag">Especialistas desde 2009</div>
+  <h1>PAVIMENTOS<br>DE <em>ALTO</em><br>RENDIMIENTO</h1>
+  <p class="hero-sub">Soluciones duraderas, seguras y adaptadas a cada proyecto industrial en España.</p>
+  <div class="hero-btns">
+    <a href="#contacto" class="btn-primary">Solicitar presupuesto</a>
+    <a href="#proyectos" class="btn-secondary">Ver proyectos</a>
+  </div>
+  <div class="hero-stats" aria-label="Cifras clave">
+    <div class="stat"><div class="stat-n">+100</div><div class="stat-l">Proyectos</div></div>
+    <div class="stat"><div class="stat-n">+15</div><div class="stat-l">Años</div></div>
+    <div class="stat"><div class="stat-n">200K</div><div class="stat-l">m² ejec.</div></div>
+    <div class="stat"><div class="stat-n">100%</div><div class="stat-l">Garantía</div></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     QUIÉNES SOMOS
+     ============================================================ -->
+<section class="sec sec-alt" id="nosotros" aria-labelledby="nosotros-title">
+  <div class="about-inner">
+    <div>
+      <div class="fade-in">
+        <div class="sec-tag">Quiénes somos</div>
+        <h2 class="sec-title" id="nosotros-title">AUTORIDAD<br>EN EL SECTOR</h2>
+        <div class="divider" aria-hidden="true"></div>
+        <p class="sec-sub">PAVIMENTCIVIL nació con un único objetivo: ejecutar pavimentos industriales con la máxima calidad técnica y el mínimo tiempo de inactividad para nuestros clientes.</p>
+      </div>
+      <div class="about-badge-row fade-in delay-1">
+        <div class="about-badge" aria-label="Más de 15 años de experiencia">
+          <div class="badge-n">15+</div>
+          <div class="badge-t">años<br>expertos</div>
+        </div>
+        <p class="about-quote">"Materiales certificados. Procesos auditados. Resultados que duran décadas."</p>
+      </div>
+    </div>
+    <div class="values-grid fade-in delay-2" aria-label="Nuestros valores">
+      <div class="val">
+        <div class="val-icon" aria-hidden="true">⬡</div>
+        <div class="val-title">Calidad</div>
+        <div class="val-desc">Materiales certificados y procesos auditados en cada obra</div>
+      </div>
+      <div class="val">
+        <div class="val-icon" aria-hidden="true">◎</div>
+        <div class="val-title">Precisión</div>
+        <div class="val-desc">Tolerancias de nivelación según normativa vigente</div>
+      </div>
+      <div class="val">
+        <div class="val-icon" aria-hidden="true">◈</div>
+        <div class="val-title">Durabilidad</div>
+        <div class="val-desc">Sistemas que aguantan décadas de uso industrial intensivo</div>
+      </div>
+      <div class="val">
+        <div class="val-icon" aria-hidden="true">▣</div>
+        <div class="val-title">Garantía</div>
+        <div class="val-desc">Certificado escrito y protocolo de mantenimiento incluido</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PAVIMENTOS
+     ============================================================ -->
+<section class="sec" id="pavimentos" aria-labelledby="pav-title">
+  <div class="fade-in">
+    <div class="sec-tag">Nuestras soluciones</div>
+    <h2 class="sec-title" id="pav-title">TIPOS DE<br>PAVIMENTO</h2>
+    <div class="divider" aria-hidden="true"></div>
+    <p class="sec-sub">Elegir el sistema correcto marca la diferencia entre una instalación que dura años o una que falla en meses.</p>
+  </div>
+  <div class="pav-cards fade-in delay-1">
+    <article class="pav-card" data-pav="hormigon">
+      <div class="pav-num">01</div>
+      <h3 class="pav-name">Hormigón Industrial</h3>
+      <p class="pav-desc">La opción más robusta para cargas extremas. Alta resistencia mecánica con aditivos especializados para naves y almacenes de gran actividad.</p>
+      <div class="pav-tags" aria-label="Usos recomendados">
+        <span class="tag">Naves</span><span class="tag">Almacenes</span><span class="tag">Parkings</span>
+      </div>
+      <button class="pav-more" type="button" aria-label="Ver más sobre Hormigón Industrial">Ver más <span aria-hidden="true">→</span></button>
+    </article>
+    <article class="pav-card" data-pav="adoquines">
+      <div class="pav-num">02</div>
+      <h3 class="pav-name">Adoquines</h3>
+      <p class="pav-desc">Pavimento modular de gran resistencia y fácil mantenimiento para exteriores. Ideal para urbanizaciones, aceras, calles y accesos con tránsito peatonal y rodado.</p>
+      <div class="pav-tags">
+        <span class="tag">Urbanización</span><span class="tag">Aceras</span><span class="tag">Exteriores</span>
+      </div>
+      <button class="pav-more" type="button" aria-label="Ver más sobre Adoquines">Ver más <span aria-hidden="true">→</span></button>
+    </article>
+    <article class="pav-card" data-pav="poliuretano">
+      <div class="pav-num">03</div>
+      <h3 class="pav-name">Poliuretano</h3>
+      <p class="pav-desc">Sistema flexible que absorbe choques térmicos sin fisurarse. Perfecto para cámaras frigoríficas y zonas de lavado industrial.</p>
+      <div class="pav-tags">
+        <span class="tag">Cámaras frías</span><span class="tag">Zonas húmedas</span>
+      </div>
+      <button class="pav-more" type="button" aria-label="Ver más sobre Poliuretano">Ver más <span aria-hidden="true">→</span></button>
+    </article>
+    <article class="pav-card" data-pav="cemento">
+      <div class="pav-num">04</div>
+      <h3 class="pav-name">Cemento Pulido</h3>
+      <p class="pav-desc">Elegancia industrial con rendimiento técnico. Estético, fácil de mantener y con carácter visual único para espacios comerciales e industriales.</p>
+      <div class="pav-tags">
+        <span class="tag">Comercial</span><span class="tag">Showrooms</span><span class="tag">Retail</span>
+      </div>
+      <button class="pav-more" type="button" aria-label="Ver más sobre Cemento Pulido">Ver más <span aria-hidden="true">→</span></button>
+    </article>
+    <article class="pav-card" data-pav="mma">
+      <div class="pav-num">05</div>
+      <h3 class="pav-name">Resina MMA</h3>
+      <p class="pav-desc">Fraguado ultrarrápido para cuando el tiempo es crítico. Operativo en pocas horas, con altas prestaciones para proyectos urgentes.</p>
+      <div class="pav-tags">
+        <span class="tag">Urgente</span><span class="tag">Rehabilitación</span>
+      </div>
+      <button class="pav-more" type="button" aria-label="Ver más sobre Resina MMA">Ver más <span aria-hidden="true">→</span></button>
+    </article>
+    <div class="pav-cta-card">
+      <div class="pav-cta-title">¿No sabes cuál necesitas?</div>
+      <p class="pav-cta-sub">Asesoramiento técnico gratuito sin compromiso</p>
+      <a href="#contacto" class="btn-gold-sm">Consultar gratis</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTORES
+     ============================================================ -->
+<section class="sec sec-alt" id="sectores" aria-labelledby="sec-title">
+  <div class="fade-in">
+    <div class="sec-tag">Dónde trabajamos</div>
+    <h2 class="sec-title" id="sec-title">SECTORES</h2>
+    <div class="divider" aria-hidden="true"></div>
+  </div>
+  <div class="sector-grid fade-in delay-1">
+    <article class="sector-card">
+      <div class="s-icon" aria-hidden="true">⚙</div>
+      <h3 class="s-name">Alimentaria</h3>
+      <p class="s-desc">Normativa HACCP, resistentes a detergentes, con pendientes para drenaje correcto.</p>
+    </article>
+    <article class="sector-card">
+      <div class="s-icon" aria-hidden="true">◻</div>
+      <h3 class="s-name">Logística</h3>
+      <p class="s-desc">Aguantan carretillas, estanterías de gran carga y tráfico rodado intensivo.</p>
+    </article>
+    <article class="sector-card">
+      <div class="s-icon" aria-hidden="true">⬡</div>
+      <h3 class="s-name">Química</h3>
+      <p class="s-desc">Resistencia a ácidos, bases y disolventes. Contención de vertidos y máxima seguridad.</p>
+    </article>
+    <article class="sector-card">
+      <div class="s-icon" aria-hidden="true">◈</div>
+      <h3 class="s-name">Parkings</h3>
+      <p class="s-desc">Impermeables frente a agua, aceites y sales viales. Señalización integrada.</p>
+    </article>
+    <article class="sector-card">
+      <div class="s-icon" aria-hidden="true">◎</div>
+      <h3 class="s-name">C. Comerciales</h3>
+      <p class="s-desc">Estética premium que soporta millones de pisadas sin degradarse con el tiempo.</p>
+    </article>
+    <article class="sector-card">
+      <div class="s-icon" aria-hidden="true">▣</div>
+      <h3 class="s-name">Salud y Farmacia</h3>
+      <p class="s-desc">Cumplimiento GMP, antiestáticos, antibacterianos y de limpieza validada para entornos críticos.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ============================================================
+     PROYECTOS (galería con lightbox)
+     Imágenes de PRUEBA en assets/proyectos/*.webp — sustituir por fotos reales.
+     ============================================================ -->
+<section class="sec" id="proyectos" aria-labelledby="proj-title">
+  <div class="fade-in">
+    <div class="sec-tag">Nuestro trabajo</div>
+    <h2 class="sec-title" id="proj-title">PROYECTOS<br>DESTACADOS</h2>
+    <div class="divider" aria-hidden="true"></div>
+  </div>
+  <div class="proj-grid fade-in delay-1">
+    <article class="proj-card">
+      <button class="proj-img" type="button"
+              data-lightbox="assets/proyectos/nave-logistica-zaragoza.webp"
+              data-caption="Nave Logística Zaragoza · Hormigón pulido · 12.000 m²"
+              aria-label="Ampliar imagen: Nave Logística Zaragoza">
+        <img src="assets/proyectos/nave-logistica-zaragoza.webp" alt="Nave logística en Zaragoza con pavimento de hormigón pulido industrial" width="400" height="300" loading="lazy">
+      </button>
+      <div class="proj-body">
+        <div class="proj-type">Hormigón pulido</div>
+        <h3 class="proj-name">Nave Logística Zaragoza</h3>
+        <p class="proj-loc">Zaragoza · 12.000 m²</p>
+      </div>
+    </article>
+    <article class="proj-card">
+      <button class="proj-img" type="button"
+              data-lightbox="assets/proyectos/planta-carnica-valencia.webp"
+              data-caption="Planta Cárnica Valencia · Epoxi alimentario · 3.500 m²"
+              aria-label="Ampliar imagen: Planta Cárnica Valencia">
+        <img src="assets/proyectos/planta-carnica-valencia.webp" alt="Pavimento epoxi alimentario en planta cárnica de Valencia" width="400" height="300" loading="lazy">
+      </button>
+      <div class="proj-body">
+        <div class="proj-type">Epoxi alimentario</div>
+        <h3 class="proj-name">Planta Cárnica Valencia</h3>
+        <p class="proj-loc">Valencia · 3.500 m²</p>
+      </div>
+    </article>
+    <article class="proj-card">
+      <button class="proj-img" type="button"
+              data-lightbox="assets/proyectos/parking-gran-via-barcelona.webp"
+              data-caption="CC Gran Via Barcelona · Parking multicapa · 8.000 m²"
+              aria-label="Ampliar imagen: CC Gran Via Barcelona">
+        <img src="assets/proyectos/parking-gran-via-barcelona.webp" alt="Parking multicapa del CC Gran Via en Barcelona con pavimento de resina" width="400" height="300" loading="lazy">
+      </button>
+      <div class="proj-body">
+        <div class="proj-type">Parking multicapa</div>
+        <h3 class="proj-name">CC Gran Via Barcelona</h3>
+        <p class="proj-loc">Barcelona · 8.000 m²</p>
+      </div>
+    </article>
+    <article class="proj-card">
+      <button class="proj-img" type="button"
+              data-lightbox="assets/proyectos/planta-quimica-tarragona.webp"
+              data-caption="Planta Química Tarragona · Resina MMA · 5.000 m²"
+              aria-label="Ampliar imagen: Planta Química Tarragona">
+        <img src="assets/proyectos/planta-quimica-tarragona.webp" alt="Pavimento de resina MMA en planta química de Tarragona" width="400" height="300" loading="lazy">
+      </button>
+      <div class="proj-body">
+        <div class="proj-type">Resina MMA</div>
+        <h3 class="proj-name">Planta Química Tarragona</h3>
+        <p class="proj-loc">Tarragona · 5.000 m²</p>
+      </div>
+    </article>
+    <article class="proj-card">
+      <button class="proj-img" type="button"
+              data-lightbox="assets/proyectos/camara-frigorifica-madrid.webp"
+              data-caption="Cámara Frigorífica Madrid · Poliuretano · 2.200 m²"
+              aria-label="Ampliar imagen: Cámara Frigorífica Madrid">
+        <img src="assets/proyectos/camara-frigorifica-madrid.webp" alt="Pavimento de poliuretano en cámara frigorífica de Madrid" width="400" height="300" loading="lazy">
+      </button>
+      <div class="proj-body">
+        <div class="proj-type">Poliuretano</div>
+        <h3 class="proj-name">Cámara Frig. Madrid</h3>
+        <p class="proj-loc">Madrid · 2.200 m²</p>
+      </div>
+    </article>
+    <div class="proj-more" role="complementary">
+      <div>
+        <p class="proj-more-title">+500 proyectos más</p>
+        <a href="#contacto" class="proj-more-link">Ver portfolio completo →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PROCESO
+     ============================================================ -->
+<section class="sec sec-alt" id="proceso" aria-labelledby="proc-title">
+  <div class="fade-in">
+    <div class="sec-tag">Cómo trabajamos</div>
+    <h2 class="sec-title" id="proc-title">NUESTRO<br>PROCESO</h2>
+    <div class="divider" aria-hidden="true"></div>
+  </div>
+  <ol class="process-steps fade-in delay-1" aria-label="Pasos del proceso de trabajo">
+    <li class="proc-step">
+      <div class="proc-circle" aria-hidden="true"><span class="proc-num">01</span></div>
+      <div class="proc-body">
+        <h3 class="proc-title">Análisis</h3>
+        <p class="proc-desc">Visita técnica gratuita para evaluar el estado actual, cargas y requisitos del pavimento.</p>
+      </div>
+    </li>
+    <li class="proc-step">
+      <div class="proc-circle" aria-hidden="true"><span class="proc-num">02</span></div>
+      <div class="proc-body">
+        <h3 class="proc-title">Asesoramiento</h3>
+        <p class="proc-desc">Propuesta técnica detallada con el sistema óptimo, plazos y presupuesto cerrado.</p>
+      </div>
+    </li>
+    <li class="proc-step">
+      <div class="proc-circle" aria-hidden="true"><span class="proc-num">03</span></div>
+      <div class="proc-body">
+        <h3 class="proc-title">Ejecución</h3>
+        <p class="proc-desc">Equipo especializado con maquinaria propia y control de calidad en cada fase.</p>
+      </div>
+    </li>
+    <li class="proc-step">
+      <div class="proc-circle" aria-hidden="true"><span class="proc-num">04</span></div>
+      <div class="proc-body">
+        <h3 class="proc-title">Entrega</h3>
+        <p class="proc-desc">Pavimento certificado con garantía escrita y protocolo de mantenimiento incluido.</p>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<!-- ============================================================
+     CTA / CONTACTO
+     ============================================================ -->
+<section class="cta-sec" id="contacto" aria-labelledby="contact-title">
+  <div class="cta-inner">
+    <div class="fade-in">
+      <div class="cta-tag">Hablemos</div>
+      <h2 class="cta-title" id="contact-title">SOLICITA TU<br>PRESUPUESTO</h2>
+      <div class="cta-divider" aria-hidden="true"></div>
+      <p class="cta-sub">Sin compromiso y sin coste. Respondemos en menos de 24 horas con una propuesta técnica adaptada a tu proyecto.</p>
+      <ul class="cta-checks" aria-label="Ventajas">
+        <li class="cta-check"><div class="check-dot" aria-hidden="true"></div>Visita técnica gratuita</li>
+        <li class="cta-check"><div class="check-dot" aria-hidden="true"></div>Presupuesto cerrado sin sorpresas</li>
+        <li class="cta-check"><div class="check-dot" aria-hidden="true"></div>Garantía por escrito en toda obra</li>
+      </ul>
+    </div>
+    <div class="contact-card fade-in delay-1">
+      <div class="contact-row">
+        <div class="c-icon" aria-hidden="true">✆</div>
+        <div>
+          <div class="c-label">Teléfono</div>
+          <!-- TODO: teléfono real -->
+          <a class="c-val" href="tel:+34900000000">+34 900 000 000</a>
+        </div>
+      </div>
+      <div class="contact-row" style="margin-bottom:20px">
+        <div class="c-icon" aria-hidden="true">✉</div>
+        <div>
+          <div class="c-label">Email</div>
+          <!-- TODO: email real -->
+          <a class="c-val" href="mailto:info@pavimentcivil.es">info@pavimentcivil.es</a>
+        </div>
+      </div>
+
+      <!-- FORMULARIO: enviado con Formspree. Configura FORMSPREE_ID en main.js -->
+      <form class="form" id="contactForm" action="https://formspree.io/f/TU_ID_FORMSPREE" method="POST" novalidate>
+        <div class="f-field">
+          <input class="f-input" type="text" name="nombre" placeholder="Nombre y empresa *" autocomplete="name" required aria-label="Nombre y empresa">
+          <span class="f-error" data-for="nombre" aria-live="polite"></span>
+        </div>
+        <div class="f-field">
+          <input class="f-input" type="tel" name="telefono" placeholder="Teléfono de contacto *" autocomplete="tel" required aria-label="Teléfono de contacto">
+          <span class="f-error" data-for="telefono" aria-live="polite"></span>
+        </div>
+        <div class="f-field">
+          <input class="f-input" type="text" name="proyecto" placeholder="Tipo de proyecto / m² aproximados" autocomplete="off" aria-label="Tipo de proyecto">
+        </div>
+        <div class="f-field">
+          <textarea class="f-input" name="mensaje" placeholder="Cuéntanos tu proyecto... *" rows="3" required aria-label="Mensaje"></textarea>
+          <span class="f-error" data-for="mensaje" aria-live="polite"></span>
+        </div>
+
+        <!-- Honeypot anti-spam: debe quedar vacío (invisible para humanos) -->
+        <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <button type="submit" class="btn-form" id="submitBtn">Enviar consulta →</button>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+
+        <!-- TODO: número de WhatsApp real (formato internacional sin +, ej: 34600112233) -->
+        <a href="https://wa.me/34900000000?text=Hola,%20me%20gustaría%20solicitar%20información%20sobre%20pavimentos%20industriales."
+           class="wa-btn"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Contactar por WhatsApp">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.557 4.118 1.529 5.845L.057 23.94l6.262-1.641A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.812 9.812 0 0 1-5.003-1.368l-.359-.213-3.718.975.993-3.63-.234-.372A9.81 9.81 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182c5.43 0 9.818 4.388 9.818 9.818 0 5.43-4.388 9.818-9.818 9.818z"/>
+          </svg>
+          WhatsApp
+        </a>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-about">
+      <div class="footer-brand">
+        <img src="assets/logo.png" alt="PavimentCivil logotipo" width="34" height="34">
+        <span class="footer-brand-name">PAVIMENTCIVIL</span>
+      </div>
+      <p class="footer-desc">Especialistas en pavimentos industriales de alto rendimiento en España. Más de 15 años construyendo suelos que duran.</p>
+    </div>
+    <nav class="f-col" aria-label="Servicios">
+      <h4>Servicios</h4>
+      <ul>
+        <li><a href="#pavimentos">Hormigón industrial</a></li>
+        <li><a href="#pavimentos">Adoquines</a></li>
+        <li><a href="#pavimentos">Poliuretano</a></li>
+        <li><a href="#pavimentos">Cemento pulido</a></li>
+        <li><a href="#pavimentos">Resina MMA</a></li>
+      </ul>
+    </nav>
+    <nav class="f-col" aria-label="Empresa">
+      <h4>Empresa</h4>
+      <ul>
+        <li><a href="#nosotros">Quiénes somos</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#proceso">Proceso</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    <nav class="f-col" aria-label="Contacto">
+      <h4>Contacto</h4>
+      <ul>
+        <li><a href="tel:+34900000000">+34 900 000 000</a></li>
+        <li><a href="mailto:info@pavimentcivil.es">info@pavimentcivil.es</a></li>
+        <li>España</li>
+      </ul>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© <span id="year">2026</span> PavimentCivil · Todos los derechos reservados</p>
+    <nav class="footer-legal" aria-label="Enlaces legales">
+      <a href="aviso-legal.html">Aviso legal</a>
+      <a href="privacidad.html">Privacidad</a>
+      <a href="cookies.html">Cookies</a>
+    </nav>
+  </div>
+</footer>
+
+<!-- ============================================================
+     MODAL DE PAVIMENTOS (detalle + galería)
+     ============================================================ -->
+<div class="pav-modal" id="pavModal" role="dialog" aria-modal="true" aria-labelledby="pavModalTitle" hidden>
+  <div class="pav-modal-box">
+    <button class="pav-modal-close" id="pavModalClose" type="button" aria-label="Cerrar detalle">&times;</button>
+    <div class="pav-modal-num" id="pavModalNum" aria-hidden="true"></div>
+    <h3 class="pav-modal-title" id="pavModalTitle"></h3>
+    <div class="pav-modal-divider" aria-hidden="true"></div>
+    <div class="pav-modal-text" id="pavModalText"></div>
+    <div class="pav-modal-gallery" id="pavModalGallery" aria-label="Galería del pavimento"></div>
+    <a href="#contacto" class="btn-gold-sm pav-modal-cta" id="pavModalCta">Solicitar presupuesto</a>
+  </div>
+</div>
+
+<!-- ============================================================
+     LIGHTBOX (galería de proyectos)
+     ============================================================ -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada" hidden>
+  <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Cerrar galería">&times;</button>
+  <button class="lightbox-nav prev" id="lightboxPrev" type="button" aria-label="Imagen anterior">&#8249;</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+  <button class="lightbox-nav next" id="lightboxNext" type="button" aria-label="Imagen siguiente">&#8250;</button>
+  <p class="lightbox-caption" id="lightboxCaption"></p>
+</div>
+
+<script src="main.js" defer></script>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>

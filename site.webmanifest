@@ -1,0 +1,19 @@
+{
+  "name": "PavimentCivil — Pavimentos Industriales",
+  "short_name": "PavimentCivil",
+  "description": "Especialistas en pavimentos industriales de alto rendimiento en España.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0A0A0A",
+  "theme_color": "#0A0A0A",
+  "lang": "es-ES",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

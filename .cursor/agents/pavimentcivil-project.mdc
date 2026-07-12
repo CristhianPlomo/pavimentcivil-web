@@ -1,0 +1,120 @@
+---
+description: Reglas estratégicas y técnicas obligatorias para la web de PAVIMENTCIVIL
+alwaysApply: true
+---
+
+# PAVIMENTCIVIL — Reglas globales
+
+## Contexto empresarial
+
+PAVIMENTCIVIL es una empresa española especializada en pavimentación y urbanización, con sede en Molina de Segura, Murcia.
+
+Los clientes prioritarios son:
+
+1. Constructoras.
+2. Administraciones públicas y ayuntamientos.
+3. Empresas privadas.
+4. Promotoras.
+
+Los particulares no son el público prioritario.
+
+La percepción central que debe transmitir la web es:
+
+"Especialistas en pavimentación que saben resolver problemas."
+
+## Posicionamiento
+
+La empresa debe transmitir:
+
+- Especialización.
+- Responsabilidad.
+- Seriedad.
+- Calidad.
+- Cumplimiento de plazos.
+- Capacidad para resolver incidencias.
+- Confianza.
+- Relaciones profesionales duraderas.
+
+No presentar a PAVIMENTCIVIL como:
+
+- Empresa generalista de construcción.
+- Empresa barata.
+- Empresa líder sin evidencias.
+- Empresa que ofrece servicios no confirmados.
+
+## Código
+
+- No reescribir el proyecto desde cero sin justificación.
+- No sustituir componentes funcionales sin explicar el motivo.
+- No instalar dependencias innecesarias.
+- Mantener componentes reutilizables.
+- Evitar duplicación.
+- Respetar el stack real del repositorio.
+- No asumir framework, base de datos o CMS sin comprobarlo.
+- Ejecutar build y lint después de cambios importantes.
+- Mantener los cambios pequeños y revisables.
+
+## Diseño
+
+- Conservar el amarillo corporativo como color de acento principal.
+- Integrar la nueva paleta de colores de forma accesible.
+- Priorizar claridad, confianza y legibilidad.
+- Utilizar preferentemente fotografías reales de obras.
+- Cuando falten imágenes, usar:
+
+[PLACEHOLDER DE IMAGEN — pendiente de fotografía real]
+
+- Evitar animaciones exageradas.
+- Evitar diseños recargados.
+- Evitar estética de startup tecnológica.
+
+## SEO
+
+- Una intención principal por página.
+- Un único H1 visible por página.
+- Jerarquía H1-H6 coherente.
+- URLs limpias.
+- Metadatos únicos.
+- Enlazado interno lógico.
+- No crear páginas geográficas sin contenido real.
+- No duplicar páginas cambiando únicamente el nombre de una ciudad.
+- Preparar breadcrumbs, sitemap, canonicals y datos estructurados.
+- Priorizar contenido útil para clientes profesionales.
+
+## Conversión
+
+Cada página importante debe ofrecer un camino claro hacia:
+
+- Solicitar estudio del proyecto.
+- Solicitar presupuesto.
+- Enviar documentación.
+- Contactar con el equipo.
+- Consultar disponibilidad.
+
+## Información empresarial
+
+No inventar:
+
+- Proyectos.
+- Clientes.
+- Cifras.
+- Certificaciones.
+- Años.
+- Superficies.
+- Testimonios.
+- Ubicaciones.
+
+Cuando falte información, escribir:
+
+Pendiente de confirmar: [dato necesario].
+
+## Proceso obligatorio
+
+Antes de modificar archivos:
+
+1. Inspeccionar el repositorio.
+2. Identificar los archivos afectados.
+3. Explicar el plan.
+4. Aplicar cambios solo después de entender la arquitectura.
+5. Validar el resultado.
+6. Resumir los archivos modificados y los riesgos pendientes.

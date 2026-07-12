@@ -1,0 +1,7 @@
+# robots.txt — PavimentCivil
+# TODO: sustituir el dominio por el definitivo
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.pavimentcivil.es/sitemap.xml
