@@ -4,44 +4,100 @@
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 :root{
   /* ============================================================
-     TOKENS PRIMITIVOS (paleta cruda — no usar directamente en componentes)
-     Los *-rgb exponen los canales para derivar variantes con transparencia
-     sin repetir el valor: rgba(var(--gold-rgb), 0.4)
+     TOKENS PRIMITIVOS (paleta corporativa cruda — no usar directamente
+     en componentes). Los *-rgb exponen los canales para derivar variantes
+     con transparencia sin repetir el valor: rgba(var(--gold-rgb), 0.4)
      ============================================================ */
-  --gold-rgb:245,197,24;
+  /* Canales RGB para transparencias */
+  --gold-rgb:255,192,0;      /* Amarillo Corporativo #FFC000 */
+  --blue-rgb:30,53,94;       /* Azul Ingeniería #1E355E (reserva para paneles translúcidos) */
   --white-rgb:255,255,255;
-  --black-rgb:10,10,10;
-  --pure-black-rgb:0,0,0;
-  --near-black-rgb:6,6,6;
+  --black-rgb:11,13,16;      /* near-black frío, alineado con --slate-1000 */
+  --pure-black-rgb:0,0,0;    /* negro puro: texto sobre CTA amarilla (máx. contraste) */
+  --near-black-rgb:6,7,9;    /* scrims de modal/lightbox */
   --green-rgb:37,211,102;
 
-  --gold-500:#F5C518;
-  --gold-700:#C9A000;
-  --neutral-1000:#0A0A0A;
-  --neutral-900:#111111;
-  --neutral-850:#1A1A1A;
-  --neutral-800:#222222;
-  --neutral-400:#AAAAAA;
-  --neutral-0:#FFFFFF;
-  --ink-100:#E8E8E8;
-  --green-500:#25D366;
-  --red-500:#FF6B6B;
+  /* Colores de marca (lámina corporativa) */
+  --amber-500:#FFC000;       /* Amarillo Corporativo — acento */
+  --blue-700:#1E355E;        /* Azul Ingeniería — estructural */
+  --graphite:#25282C;        /* Grafito */
+  --asphalt:#3B3F45;         /* Asfalto */
+  --steel:#59616B;           /* Acero */
+  --concrete-500:#7A838C;    /* Gris Hormigón — bordes/decorativo, NO texto */
+  --concrete-300:#BFC3C7;    /* Hormigón — texto secundario sobre oscuro */
+  --gray-light:#F4F5F6;      /* Gris Claro — fondos claros (fases futuras) */
+  --earth:#8E7454;           /* Tierra — reserva */
+  --neutral-0:#FFFFFF;       /* Blanco */
+
+  /* Colores DERIVADOS (no están en la lámina; justificados) */
+  --amber-700:#D99700;       /* amarillo oscuro de hover/active (la marca no lo incluye) */
+  --slate-1000:#0B0D10;      /* fondo página: near-black frío, conserva contraste */
+  --slate-900:#12171F;       /* superficie base */
+  --slate-850:#1A212B;       /* superficie de tarjetas */
+  --slate-800:#232C38;       /* superficie hover */
+  --ink-100:#E8E8E8;         /* tinta de cuerpo */
+
+  /* Colores funcionales (sin equivalente de marca — se mantienen) */
+  --green-500:#25D366;       /* WhatsApp */
+  --red-500:#FF6B6B;         /* error */
 
   /* ============================================================
      TOKENS SEMÁNTICOS (uso previsto — apuntan a primitivos)
-     El amarillo corporativo es el acento protagonista.
+     El amarillo corporativo #FFC000 es el acento protagonista.
      ============================================================ */
-  --color-accent:var(--gold-500);
-  --color-accent-strong:var(--gold-700);
-  --color-bg:var(--neutral-1000);
-  --color-surface:var(--neutral-900);
-  --color-surface-2:var(--neutral-850);
-  --color-surface-3:var(--neutral-800);
+  /* Base */
+  --color-accent:var(--amber-500);
+  --color-accent-strong:var(--amber-700);
+  --color-on-accent:var(--color-bg);            /* texto sobre amarillo (near-black, ~12:1) */
+  --color-bg:var(--slate-1000);
+  --color-surface:var(--slate-900);
+  --color-surface-2:var(--slate-850);
+  --color-surface-3:var(--slate-800);
   --color-text:var(--ink-100);
   --color-text-strong:var(--neutral-0);
-  --color-text-muted:var(--neutral-400);
+  --color-text-muted:var(--concrete-300);       /* #BFC3C7 (~11:1). NUNCA #7A838C como texto */
   --color-danger:var(--red-500);
   --color-whatsapp:var(--green-500);
+
+  /* Superficies claras / oscuras (preparadas para fases posteriores;
+     todavía sin cablear a ningún selector) */
+  --color-bg-dark:var(--slate-1000);
+  --color-surface-dark:var(--slate-900);
+  --color-bg-light:var(--gray-light);           /* #F4F5F6 */
+  --color-surface-light:var(--neutral-0);       /* #FFFFFF */
+  --color-text-on-dark:var(--ink-100);
+  --color-text-on-light:var(--graphite);        /* #25282C sobre claro (~13:1) */
+  --color-text-muted-on-light:var(--steel);     /* #59616B sobre claro (~5.8:1) */
+
+  /* Estructural (Azul Ingeniería): solo superficies rellenas / paneles.
+     Nunca como CTA principal ni como texto/borde sobre oscuro. */
+  --color-structural:var(--blue-700);
+  --color-on-structural:var(--neutral-0);       /* blanco sobre azul (~12:1) */
+
+  /* Estados */
+  --color-focus:var(--color-accent);            /* anillo de foco amarillo */
+  --color-hover:var(--color-accent-strong);
+  --color-active:var(--color-accent-strong);
+  --color-disabled:var(--concrete-500);         /* uso no textual; texto deshabilitado abajo */
+  --color-disabled-text:var(--concrete-300);
+
+  /* Bordes */
+  --color-border:rgba(var(--white-rgb),0.1);
+  --color-border-subtle:rgba(var(--white-rgb),0.06);
+  --color-border-strong:var(--concrete-500);    /* borde perceptible no textual (≥3:1 sobre oscuro) */
+
+  /* Enlaces */
+  --color-link:var(--color-text-muted);
+  --color-link-hover:var(--color-accent);
+
+  /* Botones */
+  --color-btn-primary-bg:var(--color-accent);
+  --color-btn-primary-text:var(--color-on-accent);
+  --color-btn-primary-bg-hover:var(--color-accent-strong);
+  --color-btn-secondary-bg:transparent;
+  --color-btn-secondary-text:var(--color-text-strong);
+  --color-btn-secondary-border:var(--color-border);
+  --color-btn-secondary-text-hover:var(--color-accent);
 
   /* ============================================================
      ALIAS DE COMPATIBILIDAD (nombres previos → tokens semánticos)

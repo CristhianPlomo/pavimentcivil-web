@@ -12,7 +12,7 @@ Documentación principal del proyecto.
 
 03 - SEO & GEO
 
-04 - Sistema de Diseño
+04 - Sistema de Diseño → [`DESIGN-SYSTEM.md`](DESIGN-SYSTEM.md) (color oficial cerrado; tipografía y espaciado pendientes)
 
 05 - Desarrollo
 
