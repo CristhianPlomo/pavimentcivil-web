@@ -442,129 +442,125 @@
 </section>
 
 <!-- ============================================================
-     PROYECTOS (galería con lightbox)
-     Imágenes de PRUEBA en assets/proyectos/*.webp — sustituir por fotos reales.
+     PROYECTOS (Home V1.0 — Sprint 4)
+     Imágenes provisionales — sustituir por fotografías reales de obra PAVIMENTCIVIL.
+     TODO: CTA «Consultar proyectos» → /proyectos cuando exista la ruta.
      ============================================================ -->
-<section class="sec" id="proyectos" aria-labelledby="proj-title">
-  <div class="fade-in">
-    <div class="sec-tag">Nuestro trabajo</div>
-    <h2 class="sec-title" id="proj-title">PROYECTOS<br>DESTACADOS</h2>
-    <div class="divider" aria-hidden="true"></div>
-  </div>
-  <div class="proj-grid fade-in delay-1">
-    <article class="proj-card">
-      <button class="proj-img" type="button"
-              data-lightbox="assets/proyectos/nave-logistica-zaragoza.webp"
-              data-caption="Nave Logística Zaragoza · Hormigón pulido · 12.000 m²"
-              aria-label="Ampliar imagen: Nave Logística Zaragoza">
-        <img src="assets/proyectos/nave-logistica-zaragoza.webp" alt="Nave logística en Zaragoza con pavimento de hormigón pulido industrial" width="400" height="300" loading="lazy">
-      </button>
-      <div class="proj-body">
-        <div class="proj-type">Hormigón pulido</div>
-        <h3 class="proj-name">Nave Logística Zaragoza</h3>
-        <p class="proj-loc">Zaragoza · 12.000 m²</p>
-      </div>
-    </article>
-    <article class="proj-card">
-      <button class="proj-img" type="button"
-              data-lightbox="assets/proyectos/planta-carnica-valencia.webp"
-              data-caption="Planta Cárnica Valencia · Epoxi alimentario · 3.500 m²"
-              aria-label="Ampliar imagen: Planta Cárnica Valencia">
-        <img src="assets/proyectos/planta-carnica-valencia.webp" alt="Pavimento epoxi alimentario en planta cárnica de Valencia" width="400" height="300" loading="lazy">
-      </button>
-      <div class="proj-body">
-        <div class="proj-type">Epoxi alimentario</div>
-        <h3 class="proj-name">Planta Cárnica Valencia</h3>
-        <p class="proj-loc">Valencia · 3.500 m²</p>
-      </div>
-    </article>
-    <article class="proj-card">
-      <button class="proj-img" type="button"
-              data-lightbox="assets/proyectos/parking-gran-via-barcelona.webp"
-              data-caption="CC Gran Via Barcelona · Parking multicapa · 8.000 m²"
-              aria-label="Ampliar imagen: CC Gran Via Barcelona">
-        <img src="assets/proyectos/parking-gran-via-barcelona.webp" alt="Parking multicapa del CC Gran Via en Barcelona con pavimento de resina" width="400" height="300" loading="lazy">
-      </button>
-      <div class="proj-body">
-        <div class="proj-type">Parking multicapa</div>
-        <h3 class="proj-name">CC Gran Via Barcelona</h3>
-        <p class="proj-loc">Barcelona · 8.000 m²</p>
-      </div>
-    </article>
-    <article class="proj-card">
-      <button class="proj-img" type="button"
-              data-lightbox="assets/proyectos/planta-quimica-tarragona.webp"
-              data-caption="Planta Química Tarragona · Resina MMA · 5.000 m²"
-              aria-label="Ampliar imagen: Planta Química Tarragona">
-        <img src="assets/proyectos/planta-quimica-tarragona.webp" alt="Pavimento de resina MMA en planta química de Tarragona" width="400" height="300" loading="lazy">
-      </button>
-      <div class="proj-body">
-        <div class="proj-type">Resina MMA</div>
-        <h3 class="proj-name">Planta Química Tarragona</h3>
-        <p class="proj-loc">Tarragona · 5.000 m²</p>
-      </div>
-    </article>
-    <article class="proj-card">
-      <button class="proj-img" type="button"
-              data-lightbox="assets/proyectos/camara-frigorifica-madrid.webp"
-              data-caption="Cámara Frigorífica Madrid · Poliuretano · 2.200 m²"
-              aria-label="Ampliar imagen: Cámara Frigorífica Madrid">
-        <img src="assets/proyectos/camara-frigorifica-madrid.webp" alt="Pavimento de poliuretano en cámara frigorífica de Madrid" width="400" height="300" loading="lazy">
-      </button>
-      <div class="proj-body">
-        <div class="proj-type">Poliuretano</div>
-        <h3 class="proj-name">Cámara Frig. Madrid</h3>
-        <p class="proj-loc">Madrid · 2.200 m²</p>
-      </div>
-    </article>
-    <div class="proj-more" role="complementary">
-      <div>
-        <p class="proj-more-title">+500 proyectos más</p>
-        <a href="#contacto" class="proj-more-link">Ver portfolio completo →</a>
-      </div>
-    </div>
+<section class="ds-section home-projects" id="proyectos" aria-labelledby="proyectos-title">
+  <div class="ds-section__inner">
+    <header class="home-projects__header">
+      <p class="ds-eyebrow ds-eyebrow--section">Obra ejecutada</p>
+      <h2 class="home-projects__title" id="proyectos-title">Proyectos de pavimentación y urbanización</h2>
+      <hr class="ds-rule" aria-hidden="true">
+      <p class="home-projects__lead">Intervenciones en vía pública, urbanizaciones y espacios exteriores. Cada proyecto se planifica por fases para cumplir plazos y minimizar interferencias en obra.</p>
+    </header>
+    <ul class="home-projects__grid">
+      <li>
+        <article class="ds-card home-projects__card">
+          <button class="home-projects__img" type="button"
+                  data-lightbox="assets/proyectos/nave-logistica-zaragoza.webp"
+                  data-caption="Pavimentación continua — imagen de referencia"
+                  aria-label="Ampliar imagen: Pavimentación continua">
+            <img src="assets/proyectos/nave-logistica-zaragoza.webp" alt="Obra de pavimentación continua en zona de rodadura exterior" width="400" height="300" loading="lazy" decoding="async">
+          </button>
+          <div class="home-projects__body">
+            <span class="ds-tag">Industrial / Acceso</span>
+            <h3 class="home-projects__card-title">Pavimentación continua</h3>
+            <p class="home-projects__card-desc">Ejecución de pavimento continuo para zonas de rodadura y áreas de servicio.</p>
+          </div>
+        </article>
+      </li>
+      <li>
+        <article class="ds-card home-projects__card">
+          <button class="home-projects__img" type="button"
+                  data-lightbox="assets/proyectos/parking-gran-via-barcelona.webp"
+                  data-caption="Urbanización con adoquines — imagen de referencia"
+                  aria-label="Ampliar imagen: Urbanización con adoquines">
+            <img src="assets/proyectos/parking-gran-via-barcelona.webp" alt="Obra de urbanización con pavimento articulado en espacio exterior" width="400" height="300" loading="lazy" decoding="async">
+          </button>
+          <div class="home-projects__body">
+            <span class="ds-tag">Urbanización</span>
+            <h3 class="home-projects__card-title">Urbanización con adoquines</h3>
+            <p class="home-projects__card-desc">Colocación de pavimento articulado en accesos y espacios exteriores.</p>
+          </div>
+        </article>
+      </li>
+      <li>
+        <article class="ds-card home-projects__card">
+          <button class="home-projects__img" type="button"
+                  data-lightbox="assets/proyectos/planta-carnica-valencia.webp"
+                  data-caption="Acerados y zonas peatonales — imagen de referencia"
+                  aria-label="Ampliar imagen: Acerados y zonas peatonales">
+            <img src="assets/proyectos/planta-carnica-valencia.webp" alt="Obra de acerados y zonas peatonales en intervención exterior" width="400" height="300" loading="lazy" decoding="async">
+          </button>
+          <div class="home-projects__body">
+            <span class="ds-tag">Peatonal</span>
+            <h3 class="home-projects__card-title">Acerados y zonas peatonales</h3>
+            <p class="home-projects__card-desc">Construcción y renovación de aceras con pendientes y remates.</p>
+          </div>
+        </article>
+      </li>
+      <li>
+        <article class="ds-card home-projects__card">
+          <button class="home-projects__img" type="button"
+                  data-lightbox="assets/proyectos/planta-quimica-tarragona.webp"
+                  data-caption="Obra de pavimentación por fases — imagen de referencia"
+                  aria-label="Ampliar imagen: Obra de pavimentación por fases">
+            <img src="assets/proyectos/planta-quimica-tarragona.webp" alt="Obra de pavimentación y urbanización exterior por fases" width="400" height="300" loading="lazy" decoding="async">
+          </button>
+          <div class="home-projects__body">
+            <span class="ds-tag">Por fases</span>
+            <h3 class="home-projects__card-title">Obra de pavimentación</h3>
+            <p class="home-projects__card-desc">Preparación de base, drenaje y remates en intervención exterior.</p>
+          </div>
+        </article>
+      </li>
+    </ul>
+    <footer class="home-projects__footer">
+      <a href="#contacto" class="ds-btn ds-btn--secondary home-projects__cta">Consultar proyectos</a>
+    </footer>
   </div>
 </section>
 
 <!-- ============================================================
-     PROCESO
+     PROCESO (Home V1.0 — Sprint 4)
      ============================================================ -->
-<section class="sec sec-alt" id="proceso" aria-labelledby="proc-title">
-  <div class="fade-in">
-    <div class="sec-tag">Cómo trabajamos</div>
-    <h2 class="sec-title" id="proc-title">NUESTRO<br>PROCESO</h2>
-    <div class="divider" aria-hidden="true"></div>
+<section class="ds-section ds-section--alt home-process" id="proceso" aria-labelledby="proceso-title">
+  <div class="ds-section__inner">
+    <header class="home-process__header">
+      <p class="ds-eyebrow ds-eyebrow--section">Cómo trabajamos</p>
+      <h2 class="home-process__title" id="proceso-title">Proceso de obra, de la visita a la entrega</h2>
+      <hr class="ds-rule" aria-hidden="true">
+      <p class="home-process__lead">Coordinamos cada fase con la dirección de obra para que la pavimentación encaje en el calendario general del proyecto.</p>
+    </header>
+    <ol class="home-process__steps" aria-label="Fases del proceso de obra">
+      <li class="home-process__step">
+        <span class="ds-tag home-process__step-num" aria-label="Fase 1">01</span>
+        <h3 class="home-process__step-title">Replanteo y alcance</h3>
+        <p class="home-process__step-desc">Visita en obra, mediciones y definición del alcance técnico acordado con la dirección de faena.</p>
+      </li>
+      <li class="home-process__step">
+        <span class="ds-tag home-process__step-num" aria-label="Fase 2">02</span>
+        <h3 class="home-process__step-title">Planificación y coordinación</h3>
+        <p class="home-process__step-desc">Programación por fases, ventanas de trabajo y coordinación con otros gremios.</p>
+      </li>
+      <li class="home-process__step">
+        <span class="ds-tag home-process__step-num" aria-label="Fase 3">03</span>
+        <h3 class="home-process__step-title">Ejecución por fases</h3>
+        <p class="home-process__step-desc">Preparación de base, extendido o colocación, compactación y control en cada fase.</p>
+      </li>
+      <li class="home-process__step">
+        <span class="ds-tag home-process__step-num" aria-label="Fase 4">04</span>
+        <h3 class="home-process__step-title">Control y remates</h3>
+        <p class="home-process__step-desc">Bordillos, juntas, transiciones y comprobación dimensional antes del uso.</p>
+      </li>
+      <li class="home-process__step">
+        <span class="ds-tag home-process__step-num" aria-label="Fase 5">05</span>
+        <h3 class="home-process__step-title">Entrega y documentación</h3>
+        <p class="home-process__step-desc">Entrega conforme al alcance acordado y comunicación de incidencias resueltas en obra.</p>
+      </li>
+    </ol>
   </div>
-  <ol class="process-steps fade-in delay-1" aria-label="Pasos del proceso de trabajo">
-    <li class="proc-step">
-      <div class="proc-circle" aria-hidden="true"><span class="proc-num">01</span></div>
-      <div class="proc-body">
-        <h3 class="proc-title">Análisis</h3>
-        <p class="proc-desc">Visita técnica gratuita para evaluar el estado actual, cargas y requisitos del pavimento.</p>
-      </div>
-    </li>
-    <li class="proc-step">
-      <div class="proc-circle" aria-hidden="true"><span class="proc-num">02</span></div>
-      <div class="proc-body">
-        <h3 class="proc-title">Asesoramiento</h3>
-        <p class="proc-desc">Propuesta técnica detallada con el sistema óptimo, plazos y presupuesto cerrado.</p>
-      </div>
-    </li>
-    <li class="proc-step">
-      <div class="proc-circle" aria-hidden="true"><span class="proc-num">03</span></div>
-      <div class="proc-body">
-        <h3 class="proc-title">Ejecución</h3>
-        <p class="proc-desc">Equipo especializado con maquinaria propia y control de calidad en cada fase.</p>
-      </div>
-    </li>
-    <li class="proc-step">
-      <div class="proc-circle" aria-hidden="true"><span class="proc-num">04</span></div>
-      <div class="proc-body">
-        <h3 class="proc-title">Entrega</h3>
-        <p class="proc-desc">Pavimento certificado con garantía escrita y protocolo de mantenimiento incluido.</p>
-      </div>
-    </li>
-  </ol>
 </section>
 
 <!-- ============================================================

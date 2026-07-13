@@ -159,7 +159,7 @@ Legacy `.nav`, `.hero`, `.hero-stats` permanecen en CSS sin uso en Home V1.0 has
 
 ### 8.5 Bloque 2 — Servicios y presentación
 
-- Orden DOM: confianza → servicios → presentación → **propuesta de valor** → **sectores** → proyectos (legacy).
+- Orden DOM: confianza → servicios → presentación → **propuesta de valor** → **sectores** → **proyectos** → **proceso** → contacto (legacy).
 - Sin `.fade-in` en Bloque 2 (contenido visible de inmediato).
 - Modal `#pavModal` y `initPavModal` eliminados; lightbox de proyectos intacto.
 - CTA sección servicios: `Consultar todos los servicios` → `#contacto` (TODO: `/servicios`).
@@ -176,6 +176,20 @@ Legacy `.nav`, `.hero`, `.hero-stats` permanecen en CSS sin uso en Home V1.0 has
 - Sectores: 5 perfiles cliente (sin Comunidades hasta confirmación).
 - CTA valor: «Cuéntanos tu proyecto» → `#contacto`.
 - Legacy `.sector-*` sin uso; no eliminar CSS aún.
+
+### 8.7 Sprint 4 — Proyectos y proceso
+
+| Bloque | ID | Fondo | Grid | Diferenciación visual |
+|---|---|---|---|---|
+| Proyectos | `#proyectos` | `.ds-section` | 1→2→3 cols; 4 items | Cards con imagen + lightbox; `.ds-tag` metadatos; CTA secundario |
+| Proceso | `#proceso` | `.ds-section--alt` | 1→2→5 cols; 5 fases | Timeline tipográfico; `<ol>` semántico; sin círculos decorativos |
+
+- Sin `.fade-in`, sin tile «+500 proyectos», sin claims no verificables (m², ciudades, garantías).
+- Imágenes de proyecto: estado **provisional** (`assets/proyectos/*.webp`); sustituir por fotos reales de obra PAVIMENTCIVIL.
+- Lightbox: triggers `.home-projects__img[data-lightbox]`; markup `#lightbox` sin cambios.
+- CTA proyectos: «Consultar proyectos» → `#contacto` (TODO: `/proyectos`).
+- Proceso: 5 fases obra civil (replanteo → planificación → ejecución → control → entrega); sin CTA en sección.
+- Legacy `.proj-*`, `.process-*`, `.proc-*` sin uso en Home; no eliminar CSS aún (deprecación post-migración completa).
 
 ---
 

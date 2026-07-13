@@ -133,7 +133,7 @@ let openLightboxWith = () => {};
   });
 
   // Galería de "Proyectos destacados"
-  const projTriggers = Array.from(document.querySelectorAll('.proj-img[data-lightbox]'));
+  const projTriggers = Array.from(document.querySelectorAll('.home-projects__img[data-lightbox]'));
   const projImages = projTriggers.map((t) => ({
     src: t.getAttribute('data-lightbox'),
     caption: t.getAttribute('data-caption') || '',
