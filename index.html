@@ -136,16 +136,28 @@
      HERO (Home V1.0)
      ============================================================ -->
 <section class="home-hero" id="home" aria-label="Inicio">
-  <img class="home-hero__img" src="assets/hero-cover.webp" alt="Calle adoquinada en casco histórico mediterráneo, pavimento de adoquines en perfecto estado" fetchpriority="high" decoding="async" width="1920" height="1280">
+  <img class="home-hero__bg" src="assets/hero-cover2.png" alt="" role="presentation" fetchpriority="high" decoding="async" width="1200" height="400">
   <div class="home-hero__overlay" aria-hidden="true"></div>
-  <div class="home-hero__content">
-    <p class="ds-eyebrow ds-eyebrow--accent home-hero__eyebrow">Especialistas en pavimentación</p>
-    <h1 class="home-hero__title">Pavimentación y urbanización para constructoras, empresas y administraciones públicas</h1>
-    <p class="home-hero__lead">Especialización técnica, cumplimiento de plazos y ejecución planificada para minimizar la interferencia en su obra.</p>
-    <p class="home-hero__audiences">Constructoras · Empresas · Administraciones públicas</p>
-    <div class="home-hero__actions">
-      <a href="#contacto" class="ds-btn ds-btn--primary ds-btn--lg">Pedir presupuesto técnico</a>
-      <a href="#servicios" class="ds-btn ds-btn--secondary ds-btn--lg">Ver soluciones</a>
+  <div class="home-hero__inner">
+    <div class="home-hero__content">
+      <p class="ds-eyebrow ds-eyebrow--accent home-hero__eyebrow">Especialistas en pavimentación</p>
+      <h1 class="home-hero__title">
+        <span class="home-hero__title-main">
+          <span class="home-hero__title-line">Pavimentación y</span>
+          <span class="home-hero__title-line">urbanización</span>
+        </span>
+        <span class="home-hero__title-sub">para constructoras, empresas y administraciones públicas</span>
+      </h1>
+      <p class="home-hero__lead">Especialización técnica, cumplimiento de plazos y ejecución planificada para minimizar la interferencia en su obra.</p>
+      <ul class="home-hero__tags" aria-label="Tipos de cliente">
+        <li><span class="ds-tag">Constructoras</span></li>
+        <li><span class="ds-tag">Empresas</span></li>
+        <li><span class="ds-tag">Administraciones</span></li>
+      </ul>
+      <div class="home-hero__actions">
+        <a href="#contacto" class="ds-btn ds-btn--primary ds-btn--lg">Pedir presupuesto técnico</a>
+        <a href="#servicios" class="ds-btn ds-btn--secondary ds-btn--lg">Ver soluciones</a>
+      </div>
     </div>
   </div>
 </section>
@@ -564,77 +576,125 @@
 </section>
 
 <!-- ============================================================
-     CTA / CONTACTO
+     FAQ (Home V1.0 — Sprint 5)
      ============================================================ -->
-<section class="cta-sec" id="contacto" aria-labelledby="contact-title">
-  <div class="cta-inner">
-    <div class="fade-in">
-      <div class="cta-tag">Hablemos</div>
-      <h2 class="cta-title" id="contact-title">SOLICITA TU<br>PRESUPUESTO</h2>
-      <div class="cta-divider" aria-hidden="true"></div>
-      <p class="cta-sub">Sin compromiso y sin coste. Respondemos en menos de 24 horas con una propuesta técnica adaptada a tu proyecto.</p>
-      <ul class="cta-checks" aria-label="Ventajas">
-        <li class="cta-check"><div class="check-dot" aria-hidden="true"></div>Visita técnica gratuita</li>
-        <li class="cta-check"><div class="check-dot" aria-hidden="true"></div>Presupuesto cerrado sin sorpresas</li>
-        <li class="cta-check"><div class="check-dot" aria-hidden="true"></div>Garantía por escrito en toda obra</li>
-      </ul>
+<section class="ds-section home-faq" id="faq" aria-labelledby="faq-title">
+  <div class="ds-section__inner">
+    <header class="home-faq__header">
+      <p class="ds-eyebrow ds-eyebrow--section">Antes de contactar</p>
+      <h2 class="home-faq__title" id="faq-title">Preguntas habituales</h2>
+      <hr class="ds-rule" aria-hidden="true">
+      <p class="home-faq__lead">Resolvemos las dudas más frecuentes de constructoras, empresas y administraciones antes de solicitar presupuesto.</p>
+    </header>
+    <div class="home-faq__list" role="region" aria-label="Preguntas frecuentes">
+      <details class="home-faq__item">
+        <summary class="home-faq__summary"><span class="home-faq__question">¿Qué tipo de proyectos realizáis?</span></summary>
+        <div class="home-faq__answer">
+          <p>Pavimentación continua, colocación de adoquines, urbanización exterior, acerados, bordillos y obra civil de pavimentación. Cada intervención se define en replanteo según la especificación del proyecto.</p>
+        </div>
+      </details>
+      <details class="home-faq__item">
+        <summary class="home-faq__summary"><span class="home-faq__question">¿Trabajáis para constructoras?</span></summary>
+        <div class="home-faq__answer">
+          <p>Sí. Trabajamos con constructoras, empresas privadas y administraciones públicas. Coordinamos fases y remates con la dirección de obra para integrarnos en el calendario general del proyecto.</p>
+        </div>
+      </details>
+      <details class="home-faq__item">
+        <summary class="home-faq__summary"><span class="home-faq__question">¿Actuáis fuera de Murcia?</span></summary>
+        <div class="home-faq__answer">
+          <p>Nuestra base operativa está en Molina de Segura (Murcia). Desarrollamos proyectos en la Región de Murcia y zonas limítrofes. <strong>Pendiente de confirmar:</strong> cobertura en otras provincias.</p>
+        </div>
+      </details>
+      <details class="home-faq__item">
+        <summary class="home-faq__summary"><span class="home-faq__question">¿Cómo solicitar un presupuesto?</span></summary>
+        <div class="home-faq__answer">
+          <p>Completa el formulario de contacto con los datos básicos de tu obra. Revisamos la información y, si encaja con nuestro alcance, acordamos los siguientes pasos técnicos. <strong>Pendiente de confirmar:</strong> plazo habitual de respuesta.</p>
+        </div>
+      </details>
+      <details class="home-faq__item">
+        <summary class="home-faq__summary"><span class="home-faq__question">¿Qué información necesitáis para valorar una obra?</span></summary>
+        <div class="home-faq__answer">
+          <p>Ubicación, tipo de intervención, superficie aproximada, plazo previsto y cualquier especificación técnica o plano disponible. Cuanta más información aportéis, más precisa será la primera valoración.</p>
+        </div>
+      </details>
+      <details class="home-faq__item">
+        <summary class="home-faq__summary"><span class="home-faq__question">¿Realizáis mantenimiento y reparación?</span></summary>
+        <div class="home-faq__answer">
+          <p><strong>Pendiente de confirmar:</strong> disponibilidad y alcance de mantenimiento y reparación de pavimentos existentes. Indica el tipo de deterioro y la ubicación en el formulario y evaluaremos si podemos asumir la intervención.</p>
+        </div>
+      </details>
     </div>
-    <div class="contact-card fade-in delay-1">
-      <div class="contact-row">
-        <div class="c-icon" aria-hidden="true">✆</div>
-        <div>
-          <div class="c-label">Teléfono</div>
-          <!-- TODO: teléfono real -->
-          <a class="c-val" href="tel:+34900000000">+34 900 000 000</a>
-        </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     EMBUDO DE CONVERSIÓN + CONTACTO (Home V1.0 — Sprint 5)
+     TODO: número de WhatsApp real (formato internacional sin +, ej: 34600112233)
+     ============================================================ -->
+<section class="ds-section ds-section--alt home-contact" id="contacto" aria-labelledby="contact-title">
+  <div class="ds-section__inner home-contact__inner">
+    <p class="home-contact__bridge">Si tu proyecto requiere una solución específica, estudiaremos tu caso y te asesoraremos sobre la mejor opción.</p>
+    <header class="home-contact__header">
+      <h2 class="home-contact__title" id="contact-title">Hablemos de tu proyecto</h2>
+      <hr class="ds-rule" aria-hidden="true">
+      <p class="home-contact__lead">Cuéntanos qué necesitas y prepararemos una propuesta adaptada a las características de tu obra.</p>
+      <p class="home-contact__hint">Los campos marcados con <span aria-hidden="true">*</span><span class="sr-only">asterisco</span> son obligatorios.</p>
+    </header>
+
+    <form class="ds-form home-contact__form" id="contactForm" action="https://formspree.io/f/TU_ID_FORMSPREE" method="POST" novalidate>
+      <div class="ds-field">
+        <label class="ds-label" for="contact-nombre">Nombre <span aria-hidden="true">*</span></label>
+        <input class="ds-input" type="text" id="contact-nombre" name="nombre" autocomplete="name" required>
+        <span class="ds-field-error" data-for="nombre" aria-live="polite"></span>
       </div>
-      <div class="contact-row" style="margin-bottom:20px">
-        <div class="c-icon" aria-hidden="true">✉</div>
-        <div>
-          <div class="c-label">Email</div>
-          <!-- TODO: email real -->
-          <a class="c-val" href="mailto:info@pavimentcivil.es">info@pavimentcivil.es</a>
-        </div>
+      <div class="ds-field">
+        <label class="ds-label" for="contact-empresa">Empresa</label>
+        <input class="ds-input" type="text" id="contact-empresa" name="empresa" autocomplete="organization">
+        <span class="ds-field-error" data-for="empresa" aria-live="polite"></span>
+      </div>
+      <div class="ds-field">
+        <label class="ds-label" for="contact-telefono">Teléfono <span aria-hidden="true">*</span></label>
+        <input class="ds-input" type="tel" id="contact-telefono" name="telefono" autocomplete="tel" inputmode="tel" required>
+        <span class="ds-field-error" data-for="telefono" aria-live="polite"></span>
+      </div>
+      <div class="ds-field">
+        <label class="ds-label" for="contact-email">Email <span aria-hidden="true">*</span></label>
+        <input class="ds-input" type="email" id="contact-email" name="email" autocomplete="email" inputmode="email" required>
+        <span class="ds-field-error" data-for="email" aria-live="polite"></span>
+      </div>
+      <div class="ds-field">
+        <label class="ds-label" for="contact-proyecto">Tipo de proyecto</label>
+        <select class="ds-input" id="contact-proyecto" name="proyecto">
+          <option value="">Selecciona una opción</option>
+          <option value="Pavimentación">Pavimentación</option>
+          <option value="Colocación de adoquines">Colocación de adoquines</option>
+          <option value="Urbanización">Urbanización</option>
+          <option value="Acerados">Acerados</option>
+          <option value="Bordillos">Bordillos</option>
+          <option value="Obra civil">Obra civil</option>
+          <option value="Otro / No lo sé">Otro / No lo sé</option>
+        </select>
+        <span class="ds-field-error" data-for="proyecto" aria-live="polite"></span>
+      </div>
+      <div class="ds-field">
+        <label class="ds-label" for="contact-mensaje">Mensaje <span aria-hidden="true">*</span></label>
+        <textarea class="ds-input ds-textarea" id="contact-mensaje" name="mensaje" rows="4" required></textarea>
+        <span class="ds-field-error" data-for="mensaje" aria-live="polite"></span>
       </div>
 
-      <!-- FORMULARIO: enviado con Formspree. Configura FORMSPREE_ID en main.js -->
-      <form class="form" id="contactForm" action="https://formspree.io/f/TU_ID_FORMSPREE" method="POST" novalidate>
-        <div class="f-field">
-          <input class="f-input" type="text" name="nombre" placeholder="Nombre y empresa *" autocomplete="name" required aria-label="Nombre y empresa">
-          <span class="f-error" data-for="nombre" aria-live="polite"></span>
-        </div>
-        <div class="f-field">
-          <input class="f-input" type="tel" name="telefono" placeholder="Teléfono de contacto *" autocomplete="tel" required aria-label="Teléfono de contacto">
-          <span class="f-error" data-for="telefono" aria-live="polite"></span>
-        </div>
-        <div class="f-field">
-          <input class="f-input" type="text" name="proyecto" placeholder="Tipo de proyecto / m² aproximados" autocomplete="off" aria-label="Tipo de proyecto">
-        </div>
-        <div class="f-field">
-          <textarea class="f-input" name="mensaje" placeholder="Cuéntanos tu proyecto... *" rows="3" required aria-label="Mensaje"></textarea>
-          <span class="f-error" data-for="mensaje" aria-live="polite"></span>
-        </div>
+      <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
 
-        <!-- Honeypot anti-spam: debe quedar vacío (invisible para humanos) -->
-        <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button type="submit" class="ds-btn ds-btn--primary ds-btn--block" id="submitBtn">Solicitar presupuesto</button>
+      <p class="ds-form-status" id="formStatus" role="status" aria-live="polite"></p>
+    </form>
 
-        <button type="submit" class="btn-form" id="submitBtn">Enviar consulta →</button>
-        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
-
-        <!-- TODO: número de WhatsApp real (formato internacional sin +, ej: 34600112233) -->
-        <a href="https://wa.me/34900000000?text=Hola,%20me%20gustaría%20solicitar%20información%20sobre%20pavimentos%20industriales."
-           class="wa-btn"
-           target="_blank"
-           rel="noopener noreferrer"
-           aria-label="Contactar por WhatsApp">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.557 4.118 1.529 5.845L.057 23.94l6.262-1.641A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.812 9.812 0 0 1-5.003-1.368l-.359-.213-3.718.975.993-3.63-.234-.372A9.81 9.81 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182c5.43 0 9.818 4.388 9.818 9.818 0 5.43-4.388 9.818-9.818 9.818z"/>
-          </svg>
-          WhatsApp
-        </a>
-      </form>
-    </div>
+    <p class="home-contact__alt">
+      <a href="https://wa.me/34900000000?text=Hola%2C%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20sobre%20un%20proyecto%20de%20pavimentaci%C3%B3n."
+         class="ds-btn ds-btn--whatsapp"
+         target="_blank"
+         rel="noopener noreferrer"
+         aria-label="Contactar por WhatsApp (alternativa al formulario)">¿Prefieres WhatsApp? Escríbenos</a>
+    </p>
   </div>
 </section>
 

@@ -152,23 +152,31 @@ const form = document.getElementById('contactForm');
 if (form) {
   const statusEl = document.getElementById('formStatus');
   const submitBtn = document.getElementById('submitBtn');
-  const submitDefaultText = submitBtn ? submitBtn.textContent : 'Enviar';
+  const submitDefaultText = submitBtn ? submitBtn.textContent.trim() : 'Solicitar presupuesto';
 
-  // Reglas de validación por campo
   const rules = {
-    nombre: (v) => (v.trim().length >= 2 ? '' : 'Indica tu nombre y empresa.'),
+    nombre: (v) => (v.trim().length >= 2 ? '' : 'Indica tu nombre.'),
     telefono: (v) =>
       /^[+\d][\d\s().-]{6,}$/.test(v.trim())
         ? ''
         : 'Introduce un teléfono de contacto válido.',
+    email: (v) =>
+      /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim())
+        ? ''
+        : 'Introduce un email válido.',
     mensaje: (v) => (v.trim().length >= 5 ? '' : 'Cuéntanos brevemente tu proyecto.'),
   };
 
   function setError(name, message) {
-    const errorEl = form.querySelector(`.f-error[data-for="${name}"]`);
+    const errorEl = form.querySelector(
+      `.ds-field-error[data-for="${name}"], .f-error[data-for="${name}"]`
+    );
     const inputEl = form.querySelector(`[name="${name}"]`);
     if (errorEl) errorEl.textContent = message;
-    if (inputEl) inputEl.classList.toggle('invalid', Boolean(message));
+    if (inputEl) {
+      inputEl.classList.toggle('invalid', Boolean(message));
+      inputEl.classList.toggle('is-invalid', Boolean(message));
+    }
     return !message;
   }
 
@@ -183,13 +191,12 @@ if (form) {
     return valid;
   }
 
-  // Validación en vivo al salir del campo
   Object.keys(rules).forEach((name) => {
     const input = form.querySelector(`[name="${name}"]`);
     if (input) {
       input.addEventListener('blur', () => setError(name, rules[name](input.value)));
       input.addEventListener('input', () => {
-        if (input.classList.contains('invalid')) {
+        if (input.classList.contains('invalid') || input.classList.contains('is-invalid')) {
           setError(name, rules[name](input.value));
         }
       });
@@ -199,30 +206,38 @@ if (form) {
   function setStatus(message, type) {
     if (!statusEl) return;
     statusEl.textContent = message;
-    statusEl.className = 'form-status' + (type ? ' ' + type : '');
+    statusEl.className = 'ds-form-status form-status';
+    if (type === 'sending') {
+      statusEl.classList.add('ds-form-status--sending', 'sending');
+    } else if (type === 'success') {
+      statusEl.classList.add('ds-form-status--success', 'success');
+    } else if (type === 'error') {
+      statusEl.classList.add('ds-form-status--error', 'error');
+    }
   }
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     setStatus('', '');
 
-    // Honeypot anti-spam: si está relleno, es un bot -> simulamos éxito y salimos.
     const honeypot = form.querySelector('[name="_gotcha"]');
     if (honeypot && honeypot.value) {
-      setStatus('Gracias por tu consulta.', 'success');
+      setStatus(
+        'Gracias. Hemos recibido tu consulta y nos pondremos en contacto contigo.',
+        'success'
+      );
       form.reset();
       return;
     }
 
     if (!validateForm()) {
-      setStatus('Revisa los campos marcados en rojo.', 'error');
+      setStatus('Revisa los campos marcados.', 'error');
       return;
     }
 
-    // Si no se ha configurado Formspree, avisamos con claridad.
     if (FORMSPREE_ID === 'TU_ID_FORMSPREE') {
       setStatus(
-        'Formulario aún no conectado. Configura FORMSPREE_ID en main.js o escríbenos por WhatsApp.',
+        'Formulario aún no conectado. Escríbenos por WhatsApp o email mientras activamos el envío.',
         'error'
       );
       console.warn('[PavimentCivil] Configura FORMSPREE_ID en main.js para activar el envío.');
@@ -243,18 +258,21 @@ if (form) {
       });
 
       if (response.ok) {
-        setStatus('¡Gracias! Te contactaremos en menos de 24 horas.', 'success');
+        setStatus(
+          'Gracias. Hemos recibido tu consulta y nos pondremos en contacto contigo.',
+          'success'
+        );
         form.reset();
       } else {
         const data = await response.json().catch(() => ({}));
         const msg =
           data && data.errors && data.errors.length
             ? data.errors.map((err) => err.message).join(' ')
-            : 'No se pudo enviar. Inténtalo de nuevo o usa WhatsApp.';
+            : 'No se pudo enviar. Inténtalo de nuevo o contáctanos por WhatsApp.';
         setStatus(msg, 'error');
       }
     } catch (err) {
-      setStatus('Error de conexión. Revisa tu red o escríbenos por WhatsApp.', 'error');
+      setStatus('Error de conexión. Inténtalo de nuevo o contáctanos por WhatsApp.', 'error');
     } finally {
       if (submitBtn) {
         submitBtn.disabled = false;

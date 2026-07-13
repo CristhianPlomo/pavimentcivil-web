@@ -159,7 +159,7 @@ Legacy `.nav`, `.hero`, `.hero-stats` permanecen en CSS sin uso en Home V1.0 has
 
 ### 8.5 Bloque 2 — Servicios y presentación
 
-- Orden DOM: confianza → servicios → presentación → **propuesta de valor** → **sectores** → **proyectos** → **proceso** → contacto (legacy).
+- Orden DOM: confianza → servicios → presentación → **propuesta de valor** → **sectores** → **proyectos** → **proceso** → **faq** → **contacto** → footer (legacy).
 - Sin `.fade-in` en Bloque 2 (contenido visible de inmediato).
 - Modal `#pavModal` y `initPavModal` eliminados; lightbox de proyectos intacto.
 - CTA sección servicios: `Consultar todos los servicios` → `#contacto` (TODO: `/servicios`).
@@ -190,6 +190,24 @@ Legacy `.nav`, `.hero`, `.hero-stats` permanecen en CSS sin uso en Home V1.0 has
 - CTA proyectos: «Consultar proyectos» → `#contacto` (TODO: `/proyectos`).
 - Proceso: 5 fases obra civil (replanteo → planificación → ejecución → control → entrega); sin CTA en sección.
 - Legacy `.proj-*`, `.process-*`, `.proc-*` sin uso en Home; no eliminar CSS aún (deprecación post-migración completa).
+
+### 8.8 Sprint 5 — FAQ y embudo de conversión
+
+| Bloque | ID | Fondo | Estructura |
+|---|---|---|---|
+| FAQ | `#faq` | `.ds-section` | Acordeón `<details>` ×6; sin cards ni iconos |
+| Contacto | `#contacto` | `.ds-section--alt` | Transición → CTA → formulario → WhatsApp secundario |
+
+- Journey único: FAQ → puente corporativo → «Hablemos de tu proyecto» → formulario → WhatsApp alternativo.
+- Sin `.fade-in`, sin `.cta-sec` dorado, sin `.cta-checks`, sin claims no verificables.
+- Formulario: `.ds-form` con labels visibles; campos `nombre*`, `empresa`, `telefono*`, `email*`, `proyecto` (select), `mensaje*`.
+- Submit: «Solicitar presupuesto» — CTA principal de toda la Home.
+- WhatsApp: `.ds-btn--whatsapp` fuera del `<form>`, debajo del status.
+- Estados formulario: `.ds-form-status--sending/success/error` (alias legacy `.form-status` en JS).
+- Validación `main.js`: nombre, teléfono, email, mensaje; honeypot `_gotcha`.
+- Formspree: placeholder `TU_ID_FORMSPREE` — sin cambiar en sprint.
+- Legacy `.cta-*`, `.contact-card`, `.f-field`, `.wa-btn` en form sin uso; no eliminar CSS aún.
+- Sin JSON-LD FAQPage ni cambios SEO head.
 
 ---
 
