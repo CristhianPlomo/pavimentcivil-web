@@ -11,7 +11,7 @@ Fases:
 1. **Color** — cerrado y aprobado por QA.
 2. **Tipografía + Espaciado + Layout + Motion** — Entrega 2.1 (cerrada).
 3. **Componentes `.ds-*` y cableado legacy** — Entrega 2.2 (este documento).
-4. **Páginas y layouts** — Home V1.0 Bloque 1 y Bloque 2 (§8).
+4. **Páginas y layouts** — Home V1.0 Bloques 1–3 (§8).
 
 ---
 
@@ -108,7 +108,7 @@ Ver **§7 Componentes UI** para clases `.ds-*` y mapa legacy.
 - Alias de color Fase 1 intactos (`--gold`, `--dark`, `--light`, etc.).
 - Clases HTML existentes sin cambios (`.btn-primary`, `.f-input`, `.pav-card`, etc.).
 - Selectores legacy agrupados con `.ds-*`; aspecto visual preservado.
-- Las clases `.ds-*` están en uso en Home V1.0 (Bloques 1–2: header, hero, confianza, servicios, presentación). El resto de secciones legacy conservan clases antiguas hasta siguientes bloques.
+- Las clases `.ds-*` están en uso en Home V1.0 (Bloques 1–3). El resto de secciones legacy conservan clases antiguas hasta siguientes bloques.
 
 ---
 
@@ -136,6 +136,8 @@ Primitivas de sección y bloques específicos de la Home. Fuente: bloque **HOME 
 | Confianza | `.home-trust`, `.home-trust__*` | 4 cards `ds-card`; grid 1→2→4 columnas |
 | Servicios | `.home-services`, `.home-services__*` | 6 cards; grid 1→2→3; `id="servicios"` |
 | Presentación | `.home-about`, `.home-about__*` | `id="nosotros"`; pilares 1→3 columnas |
+| Propuesta de valor | `.home-value`, `.home-value__*` | `id="propuesta-valor"`; 6 cards editoriales; CTA único |
+| Sectores | `.home-sectors`, `.home-sectors__*` | `id="sectores"`; 5 cards funcionales; sin CTA sección |
 
 ### 8.3 Tamaño botón hero
 
@@ -157,11 +159,23 @@ Legacy `.nav`, `.hero`, `.hero-stats` permanecen en CSS sin uso en Home V1.0 has
 
 ### 8.5 Bloque 2 — Servicios y presentación
 
-- Orden DOM: confianza → servicios → presentación → sectores (legacy).
+- Orden DOM: confianza → servicios → presentación → **propuesta de valor** → **sectores** → proyectos (legacy).
 - Sin `.fade-in` en Bloque 2 (contenido visible de inmediato).
 - Modal `#pavModal` y `initPavModal` eliminados; lightbox de proyectos intacto.
 - CTA sección servicios: `Consultar todos los servicios` → `#contacto` (TODO: `/servicios`).
 - Imagen presentación: `assets/pavimentos/adoquines-1.webp` (pendiente confirmar obra real).
+
+### 8.6 Bloque 3 — Propuesta de valor y sectores
+
+| Bloque | ID | Grid | Diferenciación visual |
+|---|---|---|---|
+| Propuesta de valor | `#propuesta-valor` | 1→2→3 cols; 6 items | Cards estáticas `.ds-card`; más padding; CTA primario centrado |
+| Sectores | `#sectores` | 1→2→3 cols; 5 items | `.ds-card--interactive`; labels overline; estructura necesidad/solución; sin CTA |
+
+- Sin `.fade-in`, sin iconos unicode, sin imágenes.
+- Sectores: 5 perfiles cliente (sin Comunidades hasta confirmación).
+- CTA valor: «Cuéntanos tu proyecto» → `#contacto`.
+- Legacy `.sector-*` sin uso; no eliminar CSS aún.
 
 ---
 
