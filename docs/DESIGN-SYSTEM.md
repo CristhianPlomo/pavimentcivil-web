@@ -11,7 +11,7 @@ Fases:
 1. **Color** — cerrado y aprobado por QA.
 2. **Tipografía + Espaciado + Layout + Motion** — Entrega 2.1 (cerrada).
 3. **Componentes `.ds-*` y cableado legacy** — Entrega 2.2 (este documento).
-4. **Páginas y layouts** — Home V1.0 Bloque 1 iniciado (§8).
+4. **Páginas y layouts** — Home V1.0 Bloque 1 y Bloque 2 (§8).
 
 ---
 
@@ -108,7 +108,7 @@ Ver **§7 Componentes UI** para clases `.ds-*` y mapa legacy.
 - Alias de color Fase 1 intactos (`--gold`, `--dark`, `--light`, etc.).
 - Clases HTML existentes sin cambios (`.btn-primary`, `.f-input`, `.pav-card`, etc.).
 - Selectores legacy agrupados con `.ds-*`; aspecto visual preservado.
-- Las clases `.ds-*` están en uso en Home V1.0 (Bloque 1: header, hero, confianza). El resto de secciones legacy conservan clases antiguas hasta siguientes bloques.
+- Las clases `.ds-*` están en uso en Home V1.0 (Bloques 1–2: header, hero, confianza, servicios, presentación). El resto de secciones legacy conservan clases antiguas hasta siguientes bloques.
 
 ---
 
@@ -134,6 +134,8 @@ Primitivas de sección y bloques específicos de la Home. Fuente: bloque **HOME 
 | Menú móvil | `.home-mobile-menu` | Clase `.open` controlada por `main.js` |
 | Hero | `.home-hero`, `.home-hero__*` | Sin stats; eyebrow `ds-eyebrow--accent`; CTAs `ds-btn--lg` |
 | Confianza | `.home-trust`, `.home-trust__*` | 4 cards `ds-card`; grid 1→2→4 columnas |
+| Servicios | `.home-services`, `.home-services__*` | 6 cards; grid 1→2→3; `id="servicios"` |
+| Presentación | `.home-about`, `.home-about__*` | `id="nosotros"`; pilares 1→3 columnas |
 
 ### 8.3 Tamaño botón hero
 
@@ -143,14 +145,23 @@ Primitivas de sección y bloques específicos de la Home. Fuente: bloque **HOME 
 
 Legacy `.nav`, `.hero`, `.hero-stats` permanecen en CSS sin uso en Home V1.0 hasta limpieza futura.
 
-### 8.4 Anclas transitorias (Bloque 1 → Bloque 2)
+### 8.4 Anclas (Bloque 2 — estado actual)
 
-| Ancla | Estado | Uso actual |
+| Ancla | Elemento | Enlaces activos |
 |---|---|---|
-| `#pavimentos` | **Activa** en `<section>` | Nav desktop/móvil, footer, enlaces legacy |
-| `#servicios` | **Transitoria** (`<span class="home-anchor">` dentro de `#pavimentos`) | CTA hero «Ver soluciones» |
+| `#servicios` | `<section id="servicios">` | CTA hero «Ver soluciones» |
+| `#pavimentos` | `<span class="home-anchor">` dentro de `#servicios` | Nav, menú móvil, footer (alias temporal) |
+| `#nosotros` | `<section class="home-about">` | Nav «Nosotros», footer |
 
-**Migración obligatoria en Bloque 2:** mover `id="servicios"` a la nueva sección de servicios principales; eliminar el `<span>` transitorio; actualizar nav cuando exista la sección definitiva. No eliminar `#pavimentos` hasta redirigir todos los enlaces legacy.
+**Pendiente:** cuando exista `/servicios`, actualizar CTA «Consultar todos los servicios» y redirigir enlaces `#pavimentos` del footer. Eliminar alias `#pavimentos` cuando no queden referencias.
+
+### 8.5 Bloque 2 — Servicios y presentación
+
+- Orden DOM: confianza → servicios → presentación → sectores (legacy).
+- Sin `.fade-in` en Bloque 2 (contenido visible de inmediato).
+- Modal `#pavModal` y `initPavModal` eliminados; lightbox de proyectos intacto.
+- CTA sección servicios: `Consultar todos los servicios` → `#contacto` (TODO: `/servicios`).
+- Imagen presentación: `assets/pavimentos/adoquines-1.webp` (pendiente confirmar obra real).
 
 ---
 

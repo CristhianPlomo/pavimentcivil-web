@@ -79,7 +79,6 @@ let openLightboxWith = () => {};
   const lbClose = document.getElementById('lightboxClose');
   const lbPrev = document.getElementById('lightboxPrev');
   const lbNext = document.getElementById('lightboxNext');
-  const pavModal = document.getElementById('pavModal');
   let images = [];
   let index = 0;
   let lastFocused = null;
@@ -101,8 +100,7 @@ let openLightboxWith = () => {};
 
   function close() {
     lightbox.classList.remove('open');
-    // Mantiene el scroll bloqueado si el modal de pavimentos sigue abierto
-    document.body.style.overflow = pavModal && !pavModal.hidden ? 'hidden' : '';
+    document.body.style.overflow = '';
     setTimeout(() => {
       lightbox.hidden = true;
       lbImg.src = '';
@@ -143,168 +141,6 @@ let openLightboxWith = () => {};
   }));
   projTriggers.forEach((t, i) => {
     t.addEventListener('click', () => openLightboxWith(projImages, i));
-  });
-})();
-
-/* ============================================================
-   MODAL DE PAVIMENTOS (detalle ampliado + galería de 4 imágenes)
-   ============================================================ */
-(function initPavModal() {
-  const modal = document.getElementById('pavModal');
-  if (!modal) return;
-
-  const elClose = document.getElementById('pavModalClose');
-  const elNum = document.getElementById('pavModalNum');
-  const elTitle = document.getElementById('pavModalTitle');
-  const elText = document.getElementById('pavModalText');
-  const elGallery = document.getElementById('pavModalGallery');
-  const elCta = document.getElementById('pavModalCta');
-  const lightbox = document.getElementById('lightbox');
-  let lastFocused = null;
-
-  const BASE = 'assets/pavimentos/';
-  const DATA = {
-    hormigon: {
-      num: '01',
-      title: 'Hormigón Industrial',
-      text: 'El hormigón industrial es la opción más robusta y duradera del mercado, diseñado especialmente para soportar cargas extremas y un tráfico continuo. Mediante el uso de aditivos avanzados, se logra una alta resistencia mecánica que evita el agrietamiento prematuro. Es la base indispensable para naves industriales, centros logísticos y parkings de gran actividad.',
-      images: [
-        { src: BASE + 'hormigon-1.webp', alt: 'Nave logística con pavimento de hormigón industrial pulido' },
-        { src: BASE + 'hormigon-2.webp', alt: 'Carretilla elevadora circulando sobre pavimento de hormigón industrial' },
-        { src: BASE + 'hormigon-3.webp', alt: 'Ejecución de pavimento de hormigón con fratasadora mecánica' },
-        { src: BASE + 'hormigon-4.webp', alt: 'Detalle de la superficie de hormigón industrial pulido' },
-      ],
-    },
-    adoquines: {
-      num: '02',
-      title: 'Adoquines',
-      html: `
-        <p>El adoquín es un elemento de pavimentación individual, con forma de bloque macizo, diseñado para colocarse de manera entrelazada sobre una base flexible de arena. Al conjunto de estas piezas se le conoce técnicamente como <strong>pavimento articulado</strong>.</p>
-        <p>A diferencia de las grandes losas continuas, el adoquín destaca por su enorme durabilidad, su valor estético en cascos históricos o residenciales y su capacidad única para ser desmontado y reutilizado sin generar escombros.</p>
-        <h4>Los 3 tipos de adoquines principales</h4>
-        <p>Dependiendo de su material de fabricación y su resistencia, los adoquines se clasifican en:</p>
-        <ul>
-          <li><strong>Adoquines de hormigón:</strong> son los más utilizados por ayuntamientos e industrias. Se fabrican en masa, ofrecen una altísima resistencia a cargas pesadas y permiten una gran variedad de formas geométricas que encajan entre sí (intertrabados) y una amplia gama de colores.</li>
-          <li><strong>Adoquines de piedra natural (granito, pórfido, basalto):</strong> los adoquines tradicionales por excelencia. Destacan por su estética noble e inalterable al paso del tiempo. Son extremadamente duros, resistentes al desgaste climático y los preferidos para zonas peatonales históricas y accesos residenciales de lujo.</li>
-          <li><strong>Adoquines cerámicos o de arcilla:</strong> fabricados con arcilla cocida a altas temperaturas. Ofrecen un color cálido y natural muy duradero que no se decolora con el sol. Tienen un excelente comportamiento ante el hielo y son ideales para tráficos ligeros, plazas y aceras.</li>
-        </ul>
-        <h4>Tipos de movimientos en los pavimentos de adoquines</h4>
-        <p>Al ser un sistema articulado compuesto por miles de piezas unidas por arena de sellado, su comportamiento ante los esfuerzos es completamente diferente al del hormigón o el asfalto continuo. Sus movimientos se dividen en tres grandes categorías:</p>
-        <h5>1. Movimientos térmicos (climatología)</h5>
-        <ul>
-          <li><strong>Dilatación y contracción individual:</strong> a diferencia de las grandes losas de hormigón que se agrietan con el frío o el calor, cada adoquín se expande o encoge de forma milimétrica e independiente. El estrés térmico no rompe la estructura, sino que es absorbido de manera uniforme por la arena de las juntas.</li>
-          <li><strong>Resistencia al alabeo:</strong> al tratarse de piezas de tamaño reducido, no sufren tensiones internas por diferencias de temperatura entre su cara superior e inferior, eliminando por completo el riesgo de curvatura o rotura por alabeo.</li>
-        </ul>
-        <h5>2. Movimientos por carga (tráfico e intertrabado)</h5>
-        <ul>
-          <li><strong>Rotación y desplazamiento vertical:</strong> cuando una rueda pesada pisa un adoquín, este tiende a inclinarse o hundirse levemente. Si las juntas de arena están bien compactadas, esa fuerza se transmite a los adoquines vecinos, activando el «efecto intertrabado» que reparte la carga y devuelve la pieza a su sitio.</li>
-          <li><strong>Desplazamiento horizontal (frenado y aceleración):</strong> el tráfico vehicular ejerce fuerzas horizontales que intentan «empujar» los adoquines hacia adelante o atrás. Sin un buen bordillo de confinamiento lateral, los adoquines de los extremos se moverán, abriendo las juntas y desestabilizando el diseño.</li>
-        </ul>
-        <h5>3. Movimientos del terreno (subbase y asentamientos)</h5>
-        <ul>
-          <li><strong>Asentamiento elástico (acomodo):</strong> durante las primeras semanas tras la instalación, el paso del tráfico provoca pequeños reajustes verticales en la capa de arena. Es un movimiento natural de compactación final que estabiliza la estructura.</li>
-          <li><strong>Deformación por fallas de la base:</strong> si el terreno inferior cede o se hunde por humedades o mala compactación, los adoquines copiarán ese hundimiento de forma localizada. La gran ventaja técnica es que estos baches se reparan fácilmente: se desmontan solo las piezas afectadas, se nivela el suelo y se vuelven a colocar los mismos adoquines.</li>
-        </ul>
-      `,
-      images: [
-        { src: BASE + 'adoquines-1.webp', alt: 'Colocación de adoquines en la urbanización de un chalet' },
-        { src: BASE + 'adoquines-2.webp', alt: 'Pavimentación con adoquines en el acceso de un chalet' },
-        { src: BASE + 'adoquines-3.webp', alt: 'Calle adoquinada en casco urbano con aceras terminadas' },
-        { src: BASE + 'adoquines-4.webp', alt: 'Obra de renovación de pavimento en calle comercial' },
-      ],
-    },
-    poliuretano: {
-      num: '03',
-      title: 'Poliuretano',
-      text: 'El pavimento de poliuretano destaca por su excelente flexibilidad y memoria térmica, lo que le permite absorber de manera eficiente los movimientos de dilatación y contracción del suelo base sin agrietarse. Gracias a su alta resistencia a los choques térmicos, es el sistema preferido para cámaras frigoríficas, zonas de lavado con agua caliente y entornos industriales exigentes.',
-      images: [
-        { src: BASE + 'poliuretano-1.webp', alt: 'Pavimento de poliuretano en cámara frigorífica' },
-        { src: BASE + 'poliuretano-2.webp', alt: 'Pavimento de poliuretano en zona de lavado industrial con agua caliente' },
-        { src: BASE + 'poliuretano-3.webp', alt: 'Pavimento de poliuretano en planta de bebidas' },
-        { src: BASE + 'poliuretano-4.webp', alt: 'Detalle de pavimento de poliuretano antideslizante' },
-      ],
-    },
-    cemento: {
-      num: '04',
-      title: 'Cemento Pulido',
-      text: 'Fusionando elegancia industrial con un alto rendimiento técnico, el cemento pulido proporciona un carácter visual único, minimalista y moderno. Su superficie lisa es extremadamente fácil de mantener y limpiar, lo que lo transforma en una alternativa rentable y estéticamente atractiva para locales comerciales, showrooms, áreas de retail y oficinas corporativas.',
-      images: [
-        { src: BASE + 'cemento-1.webp', alt: 'Cemento pulido en showroom minimalista' },
-        { src: BASE + 'cemento-2.webp', alt: 'Cemento pulido en tienda de retail' },
-        { src: BASE + 'cemento-3.webp', alt: 'Cemento pulido en oficina corporativa' },
-        { src: BASE + 'cemento-4.webp', alt: 'Detalle de cemento pulido con acabado satinado' },
-      ],
-    },
-    mma: {
-      num: '05',
-      title: 'Resina MMA (Metil Metacrilato)',
-      text: 'Los sistemas de resina de metil metacrilato (MMA) son la solución definitiva para proyectos urgentes gracias a su fraguado ultrarrápido, alcanzando su curado total y máxima dureza en tan solo una o dos horas. Además de minimizar los tiempos de inactividad, este pavimento mantiene una adherencia perfecta y puede aplicarse incluso bajo temperaturas extremas bajo cero, siendo ideal para la rehabilitación exprés de suelos industriales.',
-      images: [
-        { src: BASE + 'mma-1.webp', alt: 'Aplicación de resina MMA por operarios con rodillo' },
-        { src: BASE + 'mma-2.webp', alt: 'Pavimento de resina MMA en cámara de congelación bajo cero' },
-        { src: BASE + 'mma-3.webp', alt: 'Rehabilitación exprés de suelo industrial con resina MMA' },
-        { src: BASE + 'mma-4.webp', alt: 'Detalle de resina MMA con chips decorativos' },
-      ],
-    },
-  };
-
-  function open(key) {
-    const d = DATA[key];
-    if (!d) return;
-    lastFocused = document.activeElement;
-    elNum.textContent = d.num;
-    elTitle.textContent = d.title;
-    if (d.html) elText.innerHTML = d.html;
-    else elText.textContent = d.text;
-
-    const captions = d.images.map((im) => ({ src: im.src, alt: im.alt, caption: d.title + ' · ' + im.alt }));
-    elGallery.innerHTML = '';
-    d.images.forEach((im, i) => {
-      const btn = document.createElement('button');
-      btn.type = 'button';
-      btn.setAttribute('aria-label', 'Ampliar imagen: ' + im.alt);
-      const img = document.createElement('img');
-      img.src = im.src;
-      img.alt = im.alt;
-      img.loading = 'lazy';
-      img.width = 400;
-      img.height = 300;
-      btn.appendChild(img);
-      btn.addEventListener('click', () => openLightboxWith(captions, i));
-      elGallery.appendChild(btn);
-    });
-
-    modal.hidden = false;
-    requestAnimationFrame(() => modal.classList.add('open'));
-    document.body.style.overflow = 'hidden';
-    elClose.focus();
-  }
-
-  function close() {
-    modal.classList.remove('open');
-    document.body.style.overflow = '';
-    setTimeout(() => {
-      modal.hidden = true;
-      elGallery.innerHTML = '';
-    }, 300);
-    if (lastFocused) lastFocused.focus();
-  }
-
-  document.querySelectorAll('.pav-card[data-pav]').forEach((card) => {
-    const key = card.getAttribute('data-pav');
-    const btn = card.querySelector('.pav-more');
-    if (btn) btn.addEventListener('click', () => open(key));
-  });
-
-  elClose.addEventListener('click', close);
-  if (elCta) elCta.addEventListener('click', close);
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) close();
-  });
-  document.addEventListener('keydown', (e) => {
-    if (modal.hidden) return;
-    if (lightbox && !lightbox.hidden) return; // el lightbox gestiona su propio ESC
-    if (e.key === 'Escape') close();
   });
 })();
 
