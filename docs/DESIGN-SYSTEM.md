@@ -152,17 +152,17 @@ Legacy `.nav`, `.hero`, `.hero-stats` permanecen en CSS sin uso en Home V1.0 has
 | Ancla | Elemento | Enlaces activos |
 |---|---|---|
 | `#servicios` | `<section id="servicios">` | CTA hero «Ver soluciones» |
-| `#pavimentos` | `<span class="home-anchor">` dentro de `#servicios` | Nav, menú móvil, footer (alias temporal) |
+| `#pavimentos` | `<span class="home-anchor">` dentro de `#servicios` | Footer legacy (nav ya usa `servicios/`) |
 | `#nosotros` | `<section class="home-about">` | Nav «Nosotros», footer |
 
-**Pendiente:** cuando exista `/servicios`, actualizar CTA «Consultar todos los servicios» y redirigir enlaces `#pavimentos` del footer. Eliminar alias `#pavimentos` cuando no queden referencias.
+**Actualizado:** nav y CTA «Consultar todos los servicios» → `servicios/`. Alias `#pavimentos` se elimina cuando no queden referencias en footer.
 
 ### 8.5 Bloque 2 — Servicios y presentación
 
 - Orden DOM: confianza → servicios → presentación → **propuesta de valor** → **sectores** → **proyectos** → **proceso** → **faq** → **contacto** → footer (legacy).
 - Sin `.fade-in` en Bloque 2 (contenido visible de inmediato).
 - Modal `#pavModal` y `initPavModal` eliminados; lightbox de proyectos intacto.
-- CTA sección servicios: `Consultar todos los servicios` → `#contacto` (TODO: `/servicios`).
+- CTA sección servicios: `Consultar todos los servicios` → `servicios/`.
 - Imagen presentación: `assets/pavimentos/adoquines-1.webp` (pendiente confirmar obra real).
 
 ### 8.6 Bloque 3 — Propuesta de valor y sectores
@@ -208,6 +208,25 @@ Legacy `.nav`, `.hero`, `.hero-stats` permanecen en CSS sin uso en Home V1.0 has
 - Formspree: placeholder `TU_ID_FORMSPREE` — sin cambiar en sprint.
 - Legacy `.cta-*`, `.contact-card`, `.f-field`, `.wa-btn` en form sin uso; no eliminar CSS aún.
 - Sin JSON-LD FAQPage ni cambios SEO head.
+
+### 9. Página Servicios — hub V1.0 (`/servicios/`)
+
+| Bloque | ID / clase | Fondo | Estructura |
+|---|---|---|---|
+| Hero | `.page-services__hero` | Negro sólido | H1 + lead; compacto, no 100svh |
+| Intro | `.page-services__intro` | `.ds-section` | Enfoque en obra + geo Murcia |
+| Índice | `.page-services__index` | `.ds-section` | `<ol>` 6 anclas principales |
+| Catálogo | `.page-services__item` ×6 | Alterna default/alt | Grid texto + imagen; `--reverse` en pares |
+| Complementarios | `#complementarios` | `.ds-section` | 3 ítems H3; pendiente confirmar |
+| Relacionados | `.page-services__related` | `.ds-section--alt` | Enlaces proceso + sectores |
+| CTA | `.page-services__cta` | `.ds-section` | Presupuesto → `../index.html#contacto` |
+
+- Anclas principales: `#pavimentacion`, `#adoquines`, `#urbanizacion`, `#acerados`, `#bordillos`, `#obra-civil`.
+- Sin breadcrumbs, sin schema, sin páginas hijas, sin asfaltado.
+- Nav sitio: «Servicios» con `aria-current="page"` en esta ruta.
+- Home enlaces mínimos: nav, hero «Ver soluciones», CTA «Consultar todos los servicios» → `servicios/`.
+- Alias `#pavimentos` en Home se mantiene hasta footer Sprint Producción.
+- Imágenes: `assets/pavimentos/*.webp` provisional.
 
 ---
 
