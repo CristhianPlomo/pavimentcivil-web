@@ -11,7 +11,7 @@ Cada página debe responder una intención de búsqueda.
 | `/` | `index.html` | ✅ V1.0 | Entrada, confianza, conversión |
 | `/servicios/` | `servicios/index.html` | ✅ Hub V1.0 | Catálogo ampliado de servicios |
 | `/empresa` | — | Pendiente | Quiénes somos, sede, valores |
-| `/proyectos` | — | Pendiente | Portfolio real |
+| `/proyectos/` | `proyectos/index.html` | ✅ Hub V1.0 | Portfolio real |
 | `/contacto` | — | Pendiente | Formulario dedicado (hoy: `/#contacto`) |
 | Legales | `*.html` | ✅ | Aviso legal, privacidad, cookies |
 
@@ -67,14 +67,44 @@ Contacto
 ```
 Home (/)
   ├─→ /servicios/           (nav, hero, CTA todos los servicios)
+  ├─→ /proyectos/           (nav, CTA sección proyectos)
   └─← /servicios/           (logo, nav contextual)
+  └─← /proyectos/           (logo, nav contextual)
 
 /servicios/
   ├─→ ../index.html#contacto   (CTAs)
   ├─→ ../index.html#proceso
   ├─→ ../index.html#sectores
-  └─→ ../index.html#faq
+  ├─→ ../index.html#faq
+  └─→ ../proyectos/            (relacionados, nav, footer)
+
+/proyectos/
+  ├─→ ../index.html#contacto   (CTAs)
+  ├─→ ../servicios/            (hero, capacidad, servicios por card)
+  ├─→ ../index.html#faq
+  └─→ ../index.html#proceso    (futuro relacionados)
 ```
+
+## Proyectos — hub `/proyectos/` (V1.0)
+
+### Obras confirmadas (slugs reservados)
+
+| Slug | Proyecto |
+|---|---|
+| `torre-cardenas` | Centro Comercial Torre Cárdenas |
+| `cabezo-de-torres` | Cabezo de Torres |
+| `soria` | Proyecto en Soria |
+
+### Excluidos V1.0
+
+- Filtros por categoría
+- Páginas hijas `/proyectos/{slug}/`
+- JSON-LD / Schema
+- Lightbox en hub
+
+### Futuro
+
+- `/proyectos/{slug}/` → casos de éxito individuales
 
 ## Home — anclas temporales
 
@@ -82,6 +112,7 @@ Home (/)
 |---|---|
 | `#pavimentos` | Alias legacy en Home; nav ya apunta a `/servicios/` |
 | `#servicios` | Resumen en Home (bloque V1.0) |
+| `#proyectos` | Teaser en Home; nav → `/proyectos/` |
 
 ## Futuro
 
@@ -104,5 +135,5 @@ Requisito para SEO técnico definitivo y purga CSS legacy:
 - Home ✅
 - Servicios ✅ (hub)
 - Empresa
-- Proyectos
+- Proyectos ✅ (hub)
 - Contacto

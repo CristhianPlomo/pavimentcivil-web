@@ -187,7 +187,7 @@ Legacy `.nav`, `.hero`, `.hero-stats` permanecen en CSS sin uso en Home V1.0 has
 - Sin `.fade-in`, sin tile «+500 proyectos», sin claims no verificables (m², ciudades, garantías).
 - Imágenes de proyecto: estado **provisional** (`assets/proyectos/*.webp`); sustituir por fotos reales de obra PAVIMENTCIVIL.
 - Lightbox: triggers `.home-projects__img[data-lightbox]`; markup `#lightbox` sin cambios.
-- CTA proyectos: «Consultar proyectos» → `#contacto` (TODO: `/proyectos`).
+- CTA proyectos: «Consultar proyectos» → `proyectos/`; nav/footer → `proyectos/`.
 - Proceso: 5 fases obra civil (replanteo → planificación → ejecución → control → entrega); sin CTA en sección.
 - Legacy `.proj-*`, `.process-*`, `.proc-*` sin uso en Home; no eliminar CSS aún (deprecación post-migración completa).
 
@@ -227,6 +227,22 @@ Legacy `.nav`, `.hero`, `.hero-stats` permanecen en CSS sin uso en Home V1.0 has
 - Home enlaces mínimos: nav, hero «Ver soluciones», CTA «Consultar todos los servicios» → `servicios/`.
 - Alias `#pavimentos` en Home se mantiene hasta footer Sprint Producción.
 - Imágenes: `assets/pavimentos/*.webp` provisional.
+
+### 10. Página Proyectos — hub V1.0 (`/proyectos/`)
+
+| Bloque | ID / clase | Fondo | Estructura |
+|---|---|---|---|
+| Hero | `.page-projects__hero` | Negro sólido | H1 + lead + CTAs contacto/servicios |
+| Intro | `.page-projects__intro` | `.ds-section` | Enfoque obra ejecutada |
+| Grid | `#proyectos-grid` `.page-projects__grid` | `.ds-section--alt` | 3 cards; 1→2→3 cols |
+| Capacidad | `.page-projects__capacity` | `.ds-section` | Grid 4 ítems + puente servicios |
+| CTA | `.page-projects__cta` | `.ds-section` | Presupuesto → `../index.html#contacto` |
+
+- Slugs: `#torre-cardenas`, `#cabezo-de-torres`, `#soria`; `data-project-slug`, `data-project-status="hub-only"`.
+- Sin lightbox, sin filtros, sin schema, sin páginas hijas.
+- CTAs card: «Consultar proyecto» → contacto; `data-future-href` para ficha futura.
+- Imágenes: `assets/proyectos/*.webp` provisional con caption de referencia.
+- Nav: `aria-current="page"` en Proyectos.
 
 ---
 
