@@ -11,7 +11,7 @@ Fases:
 1. **Color** — cerrado y aprobado por QA.
 2. **Tipografía + Espaciado + Layout + Motion** — Entrega 2.1 (cerrada).
 3. **Componentes `.ds-*` y cableado legacy** — Entrega 2.2 (este documento).
-4. **Páginas y layouts** — no iniciar hasta cerrar 3.
+4. **Páginas y layouts** — Home V1.0 Bloque 1 iniciado (§8).
 
 ---
 
@@ -29,7 +29,7 @@ legacy siguen activas en el HTML vía selectores agrupados; aspecto visual prese
 | `.ds-btn--secondary` | Borde ghost | `.btn-secondary` |
 | `.ds-btn--whatsapp` | CTA WhatsApp | `.wa-btn` |
 | `.ds-btn--sm` | Compacto | `.btn-gold-sm`, `.nav-cta` |
-| `.ds-btn--lg` | Desktop hero (768px+) | `.btn-primary`, `.btn-secondary` (media query) |
+| `.ds-btn--lg` | Desktop hero (768px+) | `.btn-primary`, `.btn-secondary` (media query); **Home V1.0 hero** |
 | `.ds-btn--block` | Ancho completo | `.btn-form`, `.wa-btn` |
 
 Estados: `:hover`, `:active` (primario en `.btn-primary` / `.btn-form`), `:focus-visible`, `:disabled`.
@@ -108,7 +108,49 @@ Ver **§7 Componentes UI** para clases `.ds-*` y mapa legacy.
 - Alias de color Fase 1 intactos (`--gold`, `--dark`, `--light`, etc.).
 - Clases HTML existentes sin cambios (`.btn-primary`, `.f-input`, `.pav-card`, etc.).
 - Selectores legacy agrupados con `.ds-*`; aspecto visual preservado.
-- Las clases `.ds-*` están disponibles para páginas futuras; la Home no las usa aún.
+- Las clases `.ds-*` están en uso en Home V1.0 (Bloque 1: header, hero, confianza). El resto de secciones legacy conservan clases antiguas hasta siguientes bloques.
+
+---
+
+## 8. Layout Home (Bloque 1 — V1.0)
+
+Primitivas de sección y bloques específicos de la Home. Fuente: bloque **HOME V1.0** en `styles.css`.
+
+### 8.1 Primitivas layout
+
+| Clase | Rol |
+|---|---|
+| `.ds-section` | Padding vertical y horizontal de sección |
+| `.ds-section--alt` | Fondo `--dark` |
+| `.ds-section__inner` | Contenedor centrado (`--layout-max-cta`) |
+| `.ds-rule` | Línea divisoria dorada (3px) |
+| `.sr-only` | Título accesible oculto visualmente |
+
+### 8.2 Bloques Home V1.0
+
+| Bloque | Clases | Notas |
+|---|---|---|
+| Header | `.home-header`, `.home-nav`, `.home-nav__*` | Sticky; CTA `ds-btn--primary ds-btn--sm`; IDs `#menuBtn`, `#mobileMenu` para JS |
+| Menú móvil | `.home-mobile-menu` | Clase `.open` controlada por `main.js` |
+| Hero | `.home-hero`, `.home-hero__*` | Sin stats; eyebrow `ds-eyebrow--accent`; CTAs `ds-btn--lg` |
+| Confianza | `.home-trust`, `.home-trust__*` | 4 cards `ds-card`; grid 1→2→4 columnas |
+
+### 8.3 Tamaño botón hero
+
+| Clase | Comportamiento |
+|---|---|
+| `.ds-btn--lg` | Ancho completo en móvil; inline con padding md en ≥768px |
+
+Legacy `.nav`, `.hero`, `.hero-stats` permanecen en CSS sin uso en Home V1.0 hasta limpieza futura.
+
+### 8.4 Anclas transitorias (Bloque 1 → Bloque 2)
+
+| Ancla | Estado | Uso actual |
+|---|---|---|
+| `#pavimentos` | **Activa** en `<section>` | Nav desktop/móvil, footer, enlaces legacy |
+| `#servicios` | **Transitoria** (`<span class="home-anchor">` dentro de `#pavimentos`) | CTA hero «Ver soluciones» |
+
+**Migración obligatoria en Bloque 2:** mover `id="servicios"` a la nueva sección de servicios principales; eliminar el `<span>` transitorio; actualizar nav cuando exista la sección definitiva. No eliminar `#pavimentos` hasta redirigir todos los enlaces legacy.
 
 ---
 
