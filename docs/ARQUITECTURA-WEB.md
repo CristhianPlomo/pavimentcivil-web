@@ -10,7 +10,7 @@ Cada página debe responder una intención de búsqueda.
 |---|---|---|---|
 | `/` | `index.html` | ✅ V1.0 | Entrada, confianza, conversión |
 | `/servicios/` | `servicios/index.html` | ✅ Hub V1.0 | Catálogo ampliado de servicios |
-| `/empresa` | — | Pendiente | Quiénes somos, sede, valores |
+| `/empresa/` | `empresa/index.html` | ✅ Hub V1.0 | Confianza B2B, trayectoria, principios |
 | `/proyectos/` | `proyectos/index.html` | ✅ Hub V1.0 | Portfolio real |
 | `/contacto` | — | Pendiente | Formulario dedicado (hoy: `/#contacto`) |
 | Legales | `*.html` | ✅ | Aviso legal, privacidad, cookies |
@@ -66,10 +66,20 @@ Contacto
 
 ```
 Home (/)
+  ├─→ /empresa/             (nav, teaser #nosotros)
   ├─→ /servicios/           (nav, hero, CTA todos los servicios)
   ├─→ /proyectos/           (nav, CTA sección proyectos)
+  └─← /empresa/             (logo, nav contextual)
   └─← /servicios/           (logo, nav contextual)
   └─← /proyectos/           (logo, nav contextual)
+
+/empresa/
+  ├─→ ../index.html#contacto   (CTAs)
+  ├─→ ../index.html#sectores
+  ├─→ ../index.html#proceso
+  ├─→ ../index.html#faq
+  ├─→ ../servicios/            (especialización)
+  └─→ ../proyectos/            (hero, historia, resolución)
 
 /servicios/
   ├─→ ../index.html#contacto   (CTAs)
@@ -113,6 +123,7 @@ Home (/)
 | `#pavimentos` | Alias legacy en Home; nav ya apunta a `/servicios/` |
 | `#servicios` | Resumen en Home (bloque V1.0) |
 | `#proyectos` | Teaser en Home; nav → `/proyectos/` |
+| `#nosotros` | Teaser breve en Home; nav → `/empresa/` |
 
 ## Futuro
 
@@ -134,6 +145,6 @@ Requisito para SEO técnico definitivo y purga CSS legacy:
 
 - Home ✅
 - Servicios ✅ (hub)
-- Empresa
+- Empresa ✅ (hub)
 - Proyectos ✅ (hub)
 - Contacto

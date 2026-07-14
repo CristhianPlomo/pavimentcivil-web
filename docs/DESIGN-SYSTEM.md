@@ -153,7 +153,7 @@ Legacy `.nav`, `.hero`, `.hero-stats` permanecen en CSS sin uso en Home V1.0 has
 |---|---|---|
 | `#servicios` | `<section id="servicios">` | CTA hero «Ver soluciones» |
 | `#pavimentos` | `<span class="home-anchor">` dentro de `#servicios` | Footer legacy (nav ya usa `servicios/`) |
-| `#nosotros` | `<section class="home-about">` | Nav «Nosotros», footer |
+| `#nosotros` | `<section class="home-about">` | Teaser Home; CTA → `empresa/`; `#nosotros` ancla legacy |
 
 **Actualizado:** nav y CTA «Consultar todos los servicios» → `servicios/`. Alias `#pavimentos` se elimina cuando no queden referencias en footer.
 
@@ -243,6 +243,26 @@ Legacy `.nav`, `.hero`, `.hero-stats` permanecen en CSS sin uso en Home V1.0 has
 - CTAs card: «Consultar proyecto» → contacto; `data-future-href` para ficha futura.
 - Imágenes: `assets/proyectos/*.webp` provisional con caption de referencia.
 - Nav: `aria-current="page"` en Proyectos.
+
+### 11. Página Empresa — hub V1.0 (`/empresa/`)
+
+| Bloque | ID / clase | Fondo | Estructura |
+|---|---|---|---|
+| Hero | `.page-company__hero` | Negro sólido | H1 + lead + CTAs contacto/proyectos |
+| Presentación | `.page-company__intro` | `.ds-section` | Texto + aside editorial (sin fotografía confirmada) |
+| Historia | `.page-company__history` | `.ds-section--alt` | Lista numerada sin año fundación |
+| Especialización | `.page-company__focus` | `.ds-section` | Asumimos / No asumimos + enlace servicios |
+| Principios | `.page-company__principles` | `.ds-section--alt` | Lista editorial `<ol>` ×7; sin grid de cards |
+| Resolución | `.page-company__resolution` | `.ds-section` | Incidencias + enlace Soria |
+| Cobertura | `.page-company__coverage` | `.ds-section--alt` | Sede Molina de Segura + ámbito prudente |
+| CTA | `.page-company__cta` | `.ds-section` | Presupuesto → `../index.html#contacto` |
+
+- Sin fotografía real confirmada en V1.0: aside editorial provisional en intro.
+- Sin REA, sin año fundación, sin testimonios, sin logos clientes.
+- Sin `.fade-in`, sin schema, sin lightbox.
+- Nav sitio: «Empresa» con `aria-current="page"` en esta ruta.
+- Home `#nosotros`: teaser breve + CTA «Conocer la empresa» → `empresa/`.
+- Pendiente producción: fotografía real corporativa; REA (P1 Sprint Producción).
 
 ---
 
