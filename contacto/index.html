@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- TODO: sustituir el dominio https://www.pavimentcivil.es por el definitivo -->
+<!-- TODO: SEO definitivo en Sprint Producción (OG, JSON-LD, canonical definitivo) -->
+<title>Contacto para proyectos de pavimentación y urbanización | PAVIMENTCIVIL</title>
+<meta name="description" content="Solicita valoración para tu obra de pavimentación, urbanización o reparación. Constructoras, administraciones, empresas y particulares. Sede en Molina de Segura, Murcia.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0B0D10">
+<link rel="canonical" href="https://www.pavimentcivil.es/contacto/">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/favicon-64.png" type="image/png" sizes="64x64">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;600;700;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="home-header">
+  <nav class="home-nav" id="mainNav" aria-label="Navegación principal">
+    <a class="home-nav__brand" href="../" aria-label="PavimentCivil, inicio">
+      <img class="home-nav__logo" src="../assets/LogoIcono.png" alt="" width="38" height="38" aria-hidden="true">
+      <span class="home-nav__name">PAVIMENTCIVIL</span>
+    </a>
+    <ul class="home-nav__links">
+      <li><a href="../empresa/">Empresa</a></li>
+      <li><a href="../servicios/">Servicios</a></li>
+      <li><a href="../index.html#sectores">Sectores</a></li>
+      <li><a href="../proyectos/">Proyectos</a></li>
+      <li><a href="../index.html#proceso">Proceso</a></li>
+      <li><a href="../contacto/" aria-current="page">Contacto</a></li>
+    </ul>
+    <a href="#formulario-contacto" class="ds-btn ds-btn--primary ds-btn--sm home-nav__cta" aria-label="Solicitar valoración">Presupuesto</a>
+    <button type="button" class="home-nav__toggle" id="menuBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <nav class="home-mobile-menu" id="mobileMenu" aria-label="Menú móvil">
+    <a href="../empresa/">Empresa</a>
+    <a href="../servicios/">Servicios</a>
+    <a href="../index.html#sectores">Sectores</a>
+    <a href="../proyectos/">Proyectos</a>
+    <a href="../index.html#proceso">Proceso</a>
+    <a href="../contacto/" aria-current="page">Contacto</a>
+    <a href="#formulario-contacto">Presupuesto</a>
+  </nav>
+</header>
+
+<main id="main-content">
+
+<section class="page-contact__hero" aria-labelledby="contact-page-title">
+  <div class="page-contact__hero-inner ds-section__inner">
+    <p class="ds-eyebrow ds-eyebrow--accent">Contacto</p>
+    <h1 class="page-contact__hero-title" id="contact-page-title">Cuéntanos tu proyecto</h1>
+    <hr class="ds-rule" aria-hidden="true">
+    <p class="page-contact__hero-lead">Explícanos qué necesitas y revisaremos la información para valorar la mejor forma de abordar los trabajos de pavimentación, urbanización o reparación.</p>
+    <div class="page-contact__hero-actions">
+      <a href="#formulario-contacto" class="ds-btn ds-btn--primary ds-btn--lg">Solicitar valoración</a>
+      <a href="../servicios/" class="ds-btn ds-btn--secondary ds-btn--lg">Ver servicios</a>
+    </div>
+  </div>
+</section>
+
+<section class="ds-section page-contact__intro" aria-labelledby="contact-intro-title">
+  <div class="ds-section__inner">
+    <h2 class="page-contact__section-title" id="contact-intro-title">Un primer contacto claro y profesional</h2>
+    <hr class="ds-rule" aria-hidden="true">
+    <p class="page-contact__text">Trabajamos con constructoras, administraciones públicas, empresas privadas, comunidades de propietarios y particulares con proyectos exteriores de cierta entidad. Cuanta más información aportes sobre tu obra, más útil será nuestra primera revisión.</p>
+    <p class="page-contact__text">No necesitas tener todos los detalles técnicos cerrados. Indícanos ubicación, tipo de actuación y plazos aproximados; si encaja con nuestro alcance, acordamos los siguientes pasos.</p>
+  </div>
+</section>
+
+<section class="ds-section ds-section--alt page-contact__form-section" id="formulario-contacto" aria-labelledby="contact-form-title">
+  <div class="ds-section__inner page-contact__form-layout">
+    <div class="page-contact__form-main">
+      <header class="page-contact__form-header">
+        <h2 class="page-contact__section-title" id="contact-form-title">Solicitud de valoración</h2>
+        <hr class="ds-rule" aria-hidden="true">
+        <p class="page-contact__form-hint">Los campos marcados con <span aria-hidden="true">*</span><span class="sr-only">asterisco</span> son obligatorios. El resto es opcional y nos ayuda a cualificar la obra.</p>
+      </header>
+
+      <form class="ds-form page-contact__form" id="pageContactForm" action="https://formspree.io/f/TU_ID_FORMSPREE" method="POST" novalidate>
+        <div class="page-contact__error-summary" id="pageFormErrorSummary" data-form-error-summary role="alert" aria-live="assertive" hidden></div>
+
+        <div class="ds-field">
+          <label class="ds-label" for="page-contact-nombre">Nombre y apellidos <span aria-hidden="true">*</span></label>
+          <input class="ds-input" type="text" id="page-contact-nombre" name="nombre" autocomplete="name" required aria-required="true">
+          <span class="ds-field-error" id="page-error-nombre" data-for="nombre" aria-live="polite"></span>
+        </div>
+
+        <div class="ds-field">
+          <label class="ds-label" for="page-contact-telefono">Teléfono <span aria-hidden="true">*</span></label>
+          <input class="ds-input" type="tel" id="page-contact-telefono" name="telefono" autocomplete="tel" inputmode="tel" required aria-required="true">
+          <span class="ds-field-error" id="page-error-telefono" data-for="telefono" aria-live="polite"></span>
+        </div>
+
+        <div class="ds-field">
+          <label class="ds-label" for="page-contact-email">Correo electrónico <span aria-hidden="true">*</span></label>
+          <input class="ds-input" type="email" id="page-contact-email" name="email" autocomplete="email" inputmode="email" required aria-required="true">
+          <span class="ds-field-error" id="page-error-email" data-for="email" aria-live="polite"></span>
+        </div>
+
+        <div class="ds-field">
+          <label class="ds-label" for="page-contact-mensaje">Mensaje o descripción del proyecto <span aria-hidden="true">*</span></label>
+          <textarea class="ds-input ds-textarea" id="page-contact-mensaje" name="mensaje" rows="5" required aria-required="true"></textarea>
+          <span class="ds-field-error" id="page-error-mensaje" data-for="mensaje" aria-live="polite"></span>
+        </div>
+
+        <fieldset class="page-contact__optional-group">
+          <legend class="page-contact__optional-legend">Información adicional (opcional)</legend>
+
+          <div class="ds-field">
+            <label class="ds-label" for="page-contact-empresa">Empresa u organismo</label>
+            <input class="ds-input" type="text" id="page-contact-empresa" name="empresa" autocomplete="organization">
+          </div>
+
+          <div class="ds-field">
+            <label class="ds-label" for="page-contact-tipo-cliente">Tipo de cliente</label>
+            <select class="ds-input" id="page-contact-tipo-cliente" name="tipo_cliente">
+              <option value="">Selecciona una opción</option>
+              <option value="Constructora">Constructora</option>
+              <option value="Administración pública o ayuntamiento">Administración pública o ayuntamiento</option>
+              <option value="Empresa privada">Empresa privada</option>
+              <option value="Comunidad o urbanización">Comunidad o urbanización</option>
+              <option value="Particular">Particular</option>
+              <option value="Otro">Otro</option>
+            </select>
+          </div>
+
+          <div class="ds-field">
+            <label class="ds-label" for="page-contact-provincia">Provincia o localidad</label>
+            <input class="ds-input" type="text" id="page-contact-provincia" name="provincia" autocomplete="address-level2">
+          </div>
+
+          <div class="ds-field">
+            <label class="ds-label" for="page-contact-tipo-trabajo">Tipo de trabajo</label>
+            <select class="ds-input" id="page-contact-tipo-trabajo" name="tipo_trabajo">
+              <option value="">Selecciona una opción</option>
+              <option value="Colocación de adoquines">Colocación de adoquines</option>
+              <option value="Pavimentos de terrazo exterior">Pavimentos de terrazo exterior</option>
+              <option value="Bordillos y rigolas">Bordillos y rigolas</option>
+              <option value="Urbanización de viales y aceras">Urbanización de viales y aceras</option>
+              <option value="Pavimentación peatonal o residencial">Pavimentación peatonal o residencial</option>
+              <option value="Pavimentos drenantes">Pavimentos drenantes</option>
+              <option value="Rampas, vados y accesibilidad">Rampas, vados y accesibilidad</option>
+              <option value="Arquetas, rejillas y remates urbanos">Arquetas, rejillas y remates urbanos</option>
+              <option value="Centros comerciales y parkings">Centros comerciales y parkings</option>
+              <option value="Preparación y nivelación del terreno">Preparación y nivelación del terreno</option>
+              <option value="Mantenimiento o reparación">Mantenimiento o reparación</option>
+              <option value="Otro">Otro</option>
+            </select>
+          </div>
+
+          <div class="ds-field">
+            <label class="ds-label" for="page-contact-superficie">Superficie aproximada</label>
+            <input class="ds-input" type="text" id="page-contact-superficie" name="superficie" inputmode="text" autocomplete="off">
+          </div>
+
+          <div class="ds-field">
+            <label class="ds-label" for="page-contact-fecha">Fecha prevista de inicio</label>
+            <input class="ds-input" type="text" id="page-contact-fecha" name="fecha_inicio" autocomplete="off">
+          </div>
+        </fieldset>
+
+        <p class="page-contact__attach-note">Si necesitamos planos o fotografías, te indicaremos cómo enviarlos tras revisar la solicitud.</p>
+
+        <p class="page-contact__privacy">Al enviar este formulario, tus datos se utilizarán para responder a tu consulta. Consulta nuestra <a href="../privacidad.html">política de privacidad</a>.</p>
+
+        <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="hidden" name="_subject" value="Solicitud desde /contacto/ — PAVIMENTCIVIL">
+
+        <button type="submit" class="ds-btn ds-btn--primary ds-btn--block page-contact__submit" id="pageSubmitBtn">Solicitar valoración</button>
+        <p class="ds-form-status" id="pageFormStatus" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+
+    <aside class="page-contact__sidebar" aria-label="Canales de contacto e información útil">
+      <section class="page-contact__channels" aria-labelledby="contact-channels-title">
+        <h2 class="page-contact__sidebar-title" id="contact-channels-title">Otros canales</h2>
+        <ul class="page-contact__channels-list">
+          <li>
+            <span class="page-contact__channel-label">Teléfono</span>
+            <a class="page-contact__channel-value" href="tel:+34900000000">+34 900 000 000</a>
+          </li>
+          <li>
+            <span class="page-contact__channel-label">WhatsApp</span>
+            <a class="page-contact__channel-value page-contact__channel-value--secondary" href="https://wa.me/34900000000?text=Hola%2C%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20sobre%20un%20proyecto%20de%20pavimentaci%C3%B3n." target="_blank" rel="noopener noreferrer">Escribir por WhatsApp</a>
+          </li>
+          <li>
+            <span class="page-contact__channel-label">Correo</span>
+            <a class="page-contact__channel-value" href="mailto:info@pavimentcivil.es">info@pavimentcivil.es</a>
+          </li>
+          <li>
+            <span class="page-contact__channel-label">Ubicación</span>
+            <span class="page-contact__channel-value page-contact__channel-value--text">Molina de Segura, Murcia</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="page-contact__tips" aria-labelledby="contact-tips-title">
+        <h2 class="page-contact__sidebar-title" id="contact-tips-title">Qué información nos ayuda a valorar una obra</h2>
+        <ul class="page-contact__tips-list">
+          <li>Ubicación del proyecto</li>
+          <li>Tipo de pavimento o actuación</li>
+          <li>Superficie aproximada</li>
+          <li>Estado actual del terreno</li>
+          <li>Plazo previsto</li>
+          <li>Fotografías o documentación disponible</li>
+        </ul>
+        <p class="page-contact__tips-note">Estos datos facilitan la revisión, pero no son obligatorios para contactar.</p>
+      </section>
+    </aside>
+  </div>
+</section>
+
+<section class="ds-section page-contact__coverage" aria-labelledby="contact-coverage-title">
+  <div class="ds-section__inner">
+    <h2 class="page-contact__section-title" id="contact-coverage-title">Ámbito de actuación</h2>
+    <hr class="ds-rule" aria-hidden="true">
+    <p class="page-contact__text">Con sede en Molina de Segura, desarrollamos proyectos en distintas provincias españolas y estudiamos cada solicitud según ubicación, alcance y planificación.</p>
+  </div>
+</section>
+
+<section class="ds-section ds-section--alt page-contact__close" aria-labelledby="contact-close-title">
+  <div class="ds-section__inner page-contact__close-inner">
+    <h2 class="page-contact__section-title" id="contact-close-title">¿Prefieres revisar primero nuestros servicios?</h2>
+    <hr class="ds-rule" aria-hidden="true">
+    <p class="page-contact__text">Consulta el catálogo de pavimentación y urbanización antes de enviar tu solicitud, o vuelve al formulario cuando tengas clara la actuación que necesitas.</p>
+    <div class="page-contact__close-actions">
+      <a href="../servicios/" class="ds-btn ds-btn--secondary ds-btn--lg">Ver servicios</a>
+      <a href="#formulario-contacto" class="page-contact__close-link">Ir al formulario</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-about">
+      <div class="footer-brand">
+        <img src="../assets/logo.png" alt="PavimentCivil" width="432" height="540">
+      </div>
+      <p class="footer-desc">Especialistas en pavimentos industriales de alto rendimiento en España. Más de 15 años construyendo suelos que duran.</p>
+    </div>
+    <nav class="f-col" aria-label="Servicios">
+      <h4>Servicios</h4>
+      <ul>
+        <li><a href="../servicios/#pavimentacion">Pavimentación</a></li>
+        <li><a href="../servicios/#adoquines">Adoquines</a></li>
+        <li><a href="../servicios/#urbanizacion">Urbanización</a></li>
+        <li><a href="../servicios/#acerados">Acerados</a></li>
+        <li><a href="../servicios/#bordillos">Bordillos</a></li>
+      </ul>
+    </nav>
+    <nav class="f-col" aria-label="Empresa">
+      <h4>Empresa</h4>
+      <ul>
+        <li><a href="../empresa/">Quiénes somos</a></li>
+        <li><a href="../proyectos/">Proyectos</a></li>
+        <li><a href="../index.html#proceso">Proceso</a></li>
+        <li><a href="../contacto/">Contacto</a></li>
+      </ul>
+    </nav>
+    <nav class="f-col" aria-label="Contacto">
+      <h4>Contacto</h4>
+      <ul>
+        <li><a href="tel:+34900000000">+34 900 000 000</a></li>
+        <li><a href="mailto:info@pavimentcivil.es">info@pavimentcivil.es</a></li>
+        <li>Molina de Segura, Murcia</li>
+      </ul>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© <span id="year">2026</span> PavimentCivil · Todos los derechos reservados</p>
+    <nav class="footer-legal" aria-label="Enlaces legales">
+      <a href="../aviso-legal.html">Aviso legal</a>
+      <a href="../privacidad.html">Privacidad</a>
+      <a href="../cookies.html">Cookies</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="../main.js" defer></script>
+</body>
+</html>

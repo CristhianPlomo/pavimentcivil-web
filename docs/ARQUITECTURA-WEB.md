@@ -12,7 +12,7 @@ Cada página debe responder una intención de búsqueda.
 | `/servicios/` | `servicios/index.html` | ✅ Hub V1.0 | Catálogo ampliado de servicios |
 | `/empresa/` | `empresa/index.html` | ✅ Hub V1.0 | Confianza B2B, trayectoria, principios |
 | `/proyectos/` | `proyectos/index.html` | ✅ Hub V1.0 | Portfolio real |
-| `/contacto` | — | Pendiente | Formulario dedicado (hoy: `/#contacto`) |
+| `/contacto/` | `contacto/index.html` | ✅ Hub V1.0 | Captación y cualificación B2B |
 | Legales | `*.html` | ✅ | Aviso legal, privacidad, cookies |
 
 ## Menú (objetivo sitio)
@@ -69,12 +69,14 @@ Home (/)
   ├─→ /empresa/             (nav, teaser #nosotros)
   ├─→ /servicios/           (nav, hero, CTA todos los servicios)
   ├─→ /proyectos/           (nav, CTA sección proyectos)
+  ├─→ /contacto/            (nav, footer Presupuesto)
   └─← /empresa/             (logo, nav contextual)
   └─← /servicios/           (logo, nav contextual)
   └─← /proyectos/           (logo, nav contextual)
+  └─← /contacto/            (logo, nav contextual)
 
 /empresa/
-  ├─→ ../index.html#contacto   (CTAs)
+  ├─→ ../contacto/             (CTAs)
   ├─→ ../index.html#sectores
   ├─→ ../index.html#proceso
   ├─→ ../index.html#faq
@@ -82,17 +84,23 @@ Home (/)
   └─→ ../proyectos/            (hero, historia, resolución)
 
 /servicios/
-  ├─→ ../index.html#contacto   (CTAs)
+  ├─→ ../contacto/             (CTAs)
   ├─→ ../index.html#proceso
   ├─→ ../index.html#sectores
   ├─→ ../index.html#faq
-  └─→ ../proyectos/            (relacionados, nav, footer)
+  └─→ ../proyectos/
 
 /proyectos/
-  ├─→ ../index.html#contacto   (CTAs)
-  ├─→ ../servicios/            (hero, capacidad, servicios por card)
+  ├─→ ../contacto/            (CTAs)
+  ├─→ ../servicios/
   ├─→ ../index.html#faq
-  └─→ ../index.html#proceso    (futuro relacionados)
+  └─→ ../index.html#proceso
+
+/contacto/
+  ├─→ ../servicios/            (hero, cierre)
+  ├─→ ../privacidad.html       (formulario)
+  ├─→ #formulario-contacto     (CTAs internos)
+  └─← hubs + Home nav/footer
 ```
 
 ## Proyectos — hub `/proyectos/` (V1.0)
@@ -147,4 +155,4 @@ Requisito para SEO técnico definitivo y purga CSS legacy:
 - Servicios ✅ (hub)
 - Empresa ✅ (hub)
 - Proyectos ✅ (hub)
-- Contacto
+- Contacto ✅ (hub)

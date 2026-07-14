@@ -264,6 +264,22 @@ Legacy `.nav`, `.hero`, `.hero-stats` permanecen en CSS sin uso en Home V1.0 has
 - Home `#nosotros`: teaser breve + CTA «Conocer la empresa» → `empresa/`.
 - Pendiente producción: fotografía real corporativa; REA (P1 Sprint Producción).
 
+### 12. Página Contacto — hub V1.0 (`/contacto/`)
+
+| Bloque | ID / clase | Fondo | Estructura |
+|---|---|---|---|
+| Hero | `.page-contact__hero` | Negro sólido | H1 + lead + CTAs → `#formulario-contacto` / servicios |
+| Intro | `.page-contact__intro` | `.ds-section` | Contexto B2B + cualificación |
+| Formulario | `#formulario-contacto` | `.ds-section--alt` | Grid form + sidebar canales/tips |
+| Cobertura | `.page-contact__coverage` | `.ds-section` | Ámbito prudente |
+| Cierre | `.page-contact__close` | `.ds-section--alt` | Enlace servicios + formulario |
+
+- Formulario: `pageContactForm`; campos obligatorios nombre, teléfono, email, mensaje; opcionales en `<fieldset>`.
+- `initContactForm()` en `main.js` compartido con Home `#contactForm`.
+- Sin fade-in, sin file upload, sin schema.
+- Nav: «Contacto» + CTA Presupuesto → `/contacto/#formulario-contacto`.
+- Home mantiene `#contacto` teaser; Formspree P0 producción.
+
 ---
 
 ## 2. Sistema tipográfico (Entrega 2.1)

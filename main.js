@@ -31,12 +31,10 @@ if (menuBtn && mobileMenu) {
     a.addEventListener('click', () => setMenu(false));
   });
 
-  // Cerrar con Escape
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && mobileMenu.classList.contains('open')) setMenu(false);
   });
 
-  // Cerrar si se cambia a escritorio (evita estados bloqueados al rotar/redimensionar)
   window.matchMedia('(min-width: 768px)').addEventListener('change', (e) => {
     if (e.matches) setMenu(false);
   });
@@ -65,8 +63,6 @@ if ('IntersectionObserver' in window && fadeEls.length) {
 
 /* ============================================================
    LIGHTBOX (galería reutilizable)
-   openLightboxWith(imagenes, indice) abre el visor con cualquier lista.
-   Cada imagen: { src, alt, caption }
    ============================================================ */
 let openLightboxWith = () => {};
 
@@ -132,7 +128,6 @@ let openLightboxWith = () => {};
     else if (e.key === 'ArrowRight') show(index + 1);
   });
 
-  // Galería de "Proyectos destacados"
   const projTriggers = Array.from(document.querySelectorAll('.home-projects__img[data-lightbox]'));
   const projImages = projTriggers.map((t) => ({
     src: t.getAttribute('data-lightbox'),
@@ -145,27 +140,30 @@ let openLightboxWith = () => {};
 })();
 
 /* ============================================================
-   FORMULARIO DE CONTACTO
+   FORMULARIO DE CONTACTO (reutilizable)
    ============================================================ */
-const form = document.getElementById('contactForm');
+const DEFAULT_FORM_RULES = {
+  nombre: (v) => (v.trim().length >= 2 ? '' : 'Indica tu nombre y apellidos.'),
+  telefono: (v) =>
+    /^[+\d][\d\s().-]{6,}$/.test(v.trim())
+      ? ''
+      : 'Introduce un teléfono de contacto válido.',
+  email: (v) =>
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim())
+      ? ''
+      : 'Introduce un email válido.',
+  mensaje: (v) => (v.trim().length >= 5 ? '' : 'Cuéntanos brevemente tu proyecto.'),
+};
 
-if (form) {
-  const statusEl = document.getElementById('formStatus');
-  const submitBtn = document.getElementById('submitBtn');
-  const submitDefaultText = submitBtn ? submitBtn.textContent.trim() : 'Solicitar presupuesto';
+const FORM_UNAVAILABLE_MSG =
+  'No pudimos enviar tu solicitud en este momento. Llámanos o escríbenos por WhatsApp o email.';
 
-  const rules = {
-    nombre: (v) => (v.trim().length >= 2 ? '' : 'Indica tu nombre.'),
-    telefono: (v) =>
-      /^[+\d][\d\s().-]{6,}$/.test(v.trim())
-        ? ''
-        : 'Introduce un teléfono de contacto válido.',
-    email: (v) =>
-      /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim())
-        ? ''
-        : 'Introduce un email válido.',
-    mensaje: (v) => (v.trim().length >= 5 ? '' : 'Cuéntanos brevemente tu proyecto.'),
-  };
+function initContactForm(form, options = {}) {
+  const statusEl = options.statusEl || form.querySelector('.ds-form-status');
+  const submitBtn = options.submitBtn || form.querySelector('[type="submit"]');
+  const errorSummaryEl = form.querySelector('[data-form-error-summary]');
+  const submitDefaultText = submitBtn ? submitBtn.textContent.trim() : 'Enviar';
+  const rules = options.rules || DEFAULT_FORM_RULES;
 
   function setError(name, message) {
     const errorEl = form.querySelector(
@@ -176,18 +174,58 @@ if (form) {
     if (inputEl) {
       inputEl.classList.toggle('invalid', Boolean(message));
       inputEl.classList.toggle('is-invalid', Boolean(message));
+      if (message) {
+        const errorId = errorEl && errorEl.id;
+        if (errorId) {
+          const describedBy = inputEl.getAttribute('aria-describedby');
+          const ids = new Set((describedBy || '').split(/\s+/).filter(Boolean));
+          ids.add(errorId);
+          inputEl.setAttribute('aria-describedby', Array.from(ids).join(' '));
+        }
+        inputEl.setAttribute('aria-invalid', 'true');
+      } else {
+        inputEl.removeAttribute('aria-invalid');
+        if (errorEl && errorEl.id) {
+          const describedBy = inputEl.getAttribute('aria-describedby') || '';
+          const ids = describedBy
+            .split(/\s+/)
+            .filter((id) => id && id !== errorEl.id);
+          if (ids.length) inputEl.setAttribute('aria-describedby', ids.join(' '));
+          else inputEl.removeAttribute('aria-describedby');
+        }
+      }
     }
     return !message;
   }
 
   function validateForm() {
     let valid = true;
+    const errors = [];
     Object.keys(rules).forEach((name) => {
       const input = form.querySelector(`[name="${name}"]`);
       const value = input ? input.value : '';
-      const ok = setError(name, rules[name](value));
-      if (!ok) valid = false;
+      const message = rules[name](value);
+      const ok = setError(name, message);
+      if (!ok) {
+        valid = false;
+        errors.push({ name, message, input });
+      }
     });
+
+    if (errorSummaryEl) {
+      if (!valid) {
+        errorSummaryEl.hidden = false;
+        errorSummaryEl.textContent =
+          errors.length === 1
+            ? errors[0].message
+            : `Revisa ${errors.length} campos obligatorios antes de enviar.`;
+        if (errors[0].input) errors[0].input.focus();
+      } else {
+        errorSummaryEl.hidden = true;
+        errorSummaryEl.textContent = '';
+      }
+    }
+
     return valid;
   }
 
@@ -236,10 +274,7 @@ if (form) {
     }
 
     if (FORMSPREE_ID === 'TU_ID_FORMSPREE') {
-      setStatus(
-        'Formulario aún no conectado. Escríbenos por WhatsApp o email mientras activamos el envío.',
-        'error'
-      );
+      setStatus(FORM_UNAVAILABLE_MSG, 'error');
       console.warn('[PavimentCivil] Configura FORMSPREE_ID en main.js para activar el envío.');
       return;
     }
@@ -263,6 +298,10 @@ if (form) {
           'success'
         );
         form.reset();
+        if (errorSummaryEl) {
+          errorSummaryEl.hidden = true;
+          errorSummaryEl.textContent = '';
+        }
       } else {
         const data = await response.json().catch(() => ({}));
         const msg =
@@ -279,5 +318,27 @@ if (form) {
         submitBtn.textContent = submitDefaultText;
       }
     }
+  });
+}
+
+const homeContactForm = document.getElementById('contactForm');
+if (homeContactForm) {
+  initContactForm(homeContactForm, {
+    submitBtn: document.getElementById('submitBtn'),
+    statusEl: document.getElementById('formStatus'),
+    rules: {
+      nombre: (v) => (v.trim().length >= 2 ? '' : 'Indica tu nombre.'),
+      telefono: DEFAULT_FORM_RULES.telefono,
+      email: DEFAULT_FORM_RULES.email,
+      mensaje: DEFAULT_FORM_RULES.mensaje,
+    },
+  });
+}
+
+const pageContactForm = document.getElementById('pageContactForm');
+if (pageContactForm) {
+  initContactForm(pageContactForm, {
+    submitBtn: document.getElementById('pageSubmitBtn'),
+    statusEl: document.getElementById('pageFormStatus'),
   });
 }
