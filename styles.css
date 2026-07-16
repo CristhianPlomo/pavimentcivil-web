@@ -2003,8 +2003,24 @@ textarea.ds-input{
   font-size:var(--type-body-sm-size);
   color:var(--text);
   line-height:var(--type-body-line-height-loose);
-  margin:0;
+  margin:0 0 var(--space-12);
   flex:1;
+}
+.page-projects__card-note{
+  font-family:var(--type-body-family);
+  font-size:var(--type-body-sm-size);
+  color:var(--text);
+  line-height:var(--type-body-line-height-loose);
+  margin:0 0 var(--space-16);
+  max-width:52ch;
+}
+.page-projects__images-note{
+  font-family:var(--type-body-family);
+  font-size:var(--type-body-sm-size);
+  color:var(--text);
+  line-height:var(--type-body-line-height-loose);
+  margin:0;
+  max-width:62ch;
 }
 .page-projects__card-services{
   font-family:var(--type-body-family);
@@ -2054,7 +2070,8 @@ textarea.ds-input{
   color:var(--light);
   font-weight:var(--font-weight-semibold);
 }
-.page-projects__capacity-bridge{
+.page-projects__capacity-bridge,
+.page-projects__bridge{
   font-family:var(--type-body-family);
   font-size:var(--type-body-size);
   color:var(--text);
@@ -2062,10 +2079,12 @@ textarea.ds-input{
   margin:0;
   max-width:58ch;
 }
+.page-projects__bridge a,
 .page-projects__capacity-bridge a{
   color:var(--gold);
   transition:var(--state-transition-color);
 }
+.page-projects__bridge a:hover,
 .page-projects__capacity-bridge a:hover{color:var(--white)}
 .page-projects__cta-inner{
   max-width:min(100%,640px);
@@ -2077,7 +2096,7 @@ textarea.ds-input{
   font-size:var(--type-body-sm-size);
   color:var(--text);
   line-height:var(--type-body-line-height-loose);
-  margin:0;
+  margin:0 0 var(--space-24);
 }
 .page-projects__cta-actions{
   display:flex;
