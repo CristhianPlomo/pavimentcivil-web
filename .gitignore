@@ -18,3 +18,6 @@ desktop.ini
 *.log
 tmp/
 .cache/
+
+# Informes Lighthouse generados localmente (no versionar)
+lighthouse-*.json
