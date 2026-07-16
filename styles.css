@@ -1716,9 +1716,12 @@ textarea.ds-input{
 }
 .page-services__item-desc,
 .page-services__item-fit,
+.page-services__item-audience,
+.page-services__item-when,
 .page-services__related-text,
 .page-services__complementary-lead,
-.page-services__cta-lead{
+.page-services__cta-lead,
+.page-services__exit{
   font-family:var(--type-body-family);
   font-size:var(--type-body-sm-size);
   color:var(--text);
@@ -1726,6 +1729,25 @@ textarea.ds-input{
   margin:0 0 var(--space-16);
   max-width:58ch;
 }
+.page-services__item-audience strong,
+.page-services__item-when strong{color:var(--light);font-weight:var(--font-weight-semibold)}
+.page-services__item-applications-title{
+  font-family:var(--type-label-family);
+  font-size:var(--type-label-size);
+  font-weight:var(--type-label-weight);
+  letter-spacing:var(--type-label-letter-spacing);
+  color:var(--light);
+  text-transform:uppercase;
+  margin:0 0 var(--space-10);
+}
+.page-services__exit a{
+  color:var(--gold);
+  font-weight:var(--font-weight-medium);
+  transition:var(--state-transition-color);
+}
+.page-services__exit a:hover{color:var(--white)}
+.page-services__related-text a{color:var(--gold);transition:var(--state-transition-color)}
+.page-services__related-text a:hover{color:var(--white)}
 .page-services__item-includes{margin-bottom:var(--space-16)}
 .page-services__item-includes-title{
   font-family:var(--type-label-family);
@@ -1753,7 +1775,7 @@ textarea.ds-input{
   display:flex;
   flex-wrap:wrap;
   gap:var(--component-tag-gap);
-  margin-bottom:var(--space-20);
+  margin-bottom:0;
 }
 .page-services__item-cta{align-self:flex-start;min-height:44px}
 .page-services__item-media{
