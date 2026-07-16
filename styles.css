@@ -1029,6 +1029,7 @@ textarea.ds-input{
 }
 
 /* --- Confianza --- */
+.home-trust .ds-rule{margin-bottom:var(--space-24)}
 .home-trust__grid{
   list-style:none;
   margin:0;
@@ -1419,6 +1420,11 @@ textarea.ds-input{
   letter-spacing:var(--type-h4-letter-spacing);
   margin:0;
 }
+.home-projects__card-title a{
+  color:inherit;
+  transition:var(--state-transition-color);
+}
+.home-projects__card-title a:hover{color:var(--light)}
 .home-projects__card-desc{
   font-family:var(--type-body-family);
   font-size:var(--type-body-sm-size);
@@ -3017,9 +3023,8 @@ footer{background:var(--dark);padding:var(--layout-footer-py);border-top:1px sol
     grid-template-columns:1fr 1fr;
     align-items:start;
   }
-  .home-about__content{grid-column:1}
-  .home-about__media{grid-column:2;grid-row:1 / span 2}
-  .home-about__pillars{grid-template-columns:repeat(3,1fr);gap:var(--space-16)}
+  .home-about__content{grid-column:1;grid-row:1}
+  .home-about__media{grid-column:2;grid-row:1;align-self:start}
   .home-value__title{font-size:var(--type-h1-size-md);max-width:36ch}
   .home-value__lead{font-size:var(--type-body-lg-size)}
   .home-value__grid{grid-template-columns:repeat(2,1fr);gap:var(--space-24)}
