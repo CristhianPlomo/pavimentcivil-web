@@ -128,7 +128,7 @@ let openLightboxWith = () => {};
     else if (e.key === 'ArrowRight') show(index + 1);
   });
 
-  const projTriggers = Array.from(document.querySelectorAll('.home-projects__img[data-lightbox]'));
+  const projTriggers = Array.from(document.querySelectorAll('.home-projects__img[data-lightbox], .project-case__gallery-trigger[data-lightbox]'));
   const projImages = projTriggers.map((t) => ({
     src: t.getAttribute('data-lightbox'),
     caption: t.getAttribute('data-caption') || '',
